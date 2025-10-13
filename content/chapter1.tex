@@ -1,3 +1,174 @@
-\section{Lecture1}
-    \subsection{Introduction}
+\section{Introduction}
+    \subsection{Overview}
+        Some prerequisite:
+
+
+        In order to study this course better, 
+        you need to have some mathmatical maturity and a foundation of calculus.
+        
+        The textbook we use is \textcolor{red}{Discrete-Time Signal Processing, 3rd edition} written by A. V. Oppenheim.
+
+
+    \subsection{Some Suggestions}
+        In the first subsection, let's give the following suggestions.
+
+        \noindent \textcolor{red}{No reading, No learning.}
+
+        After we enter a high level of learning, we mainly depend on reading,
+        because no one will tell us the key points. 
+        The reason for setting up a series of courses is to make our learning more targeted.
+
+        \noindent \textcolor{red}{No writing, No reading.}
+
+        What is effective reading? You must write something in the paper, such as the math notations.
+        Only in that way will you brain not skip many details.
+        
+        \noindent \textcolor{red}{No data, No truth.}
+
+        In the vast majority of scientific fields, 
+        we must apply theroies and methods to real data rather than relying on simulation.
+        
+        \noindent \textcolor{red}{No Analytic, No understanding.}
+
+        If you say, "You have well understood something", you must provide a detailed analysis
+        {using symbolic language}.
+        
+        \noindent \textcolor{red}{No programming, No coginition.}
+
+        Finally, if you wish to have an intutive coginition of something, 
+        the typical approach is to use a series of visualization methods (such as pictures, tables...) to present the images in your mind.
+
+    \subsection{Digital vs Analog}
+        There are the following differences between the two.
+
+        First, digital means \textcolor{red}{programmable}. 
+        Analog rely on hardware, digital are true software, which is very flexible and easy to change.
+
+        Second, in the digital world we use bit to describe precision. 
+        And digital has a high and controllable precision.
+        
+        Third, storing, digital has a high storage density and compressible.
+
+        Finally, digital's cost is low, because it's manufactured on a silicon wafer.
+
+    \subsection{Course Arrangement}
+        The digital signal processing course has the following chapters.
+
+        \noindent \textcolor{red}{Chapter1: Preliminary for Digital.} 
+
+        In this chapter, we will introduce {Discrete Signal and System} from the following two perspectives:
+            \begin{itemize}
+                \item Time domain;
+                \item Frequency domain.
+            \end{itemize}
+        
+        \noindent \textcolor{red}{Chapter2: How to obtain digital signal.} 
+        
+        In this chapter, we will introduce:
+            \begin{itemize}
+                \item A/D: Using sampling to help us move from the real word (continuous) to digital word.
+                \item D/A: Return journey.
+            \end{itemize}
+        
+        
+        \noindent \textcolor{red}{Chapter3: How to process digital signal.} 
+
+        In this chapter, we have two basic tools for recoginzing signals:
+            \begin{itemize}
+                \item Fourier Transform.
+                \item Z transform.
+            \end{itemize}
+        Also we will introduce Linear Filtering;
+            \begin{itemize}
+                \item Representation: Discrete Convolution.
+                \item Implemention: Time domain $\longleftrightarrow$ Frequency domain.
+                \item Architecture: from software $ \longrightarrow$ chip.
+            \end{itemize}
+        
+        \newpage
+        \noindent \textcolor{red}{Chapter4: How to improve performance.}
+
+        We have the following pursuit:
+            \begin{itemize}
+                \item Faster: FFT.
+                \item More accurate
+                    \begin{itemize}
+                        \item Quantization Noise.
+                        \item Finite word length.
+                    \end{itemize}
+            \end{itemize}
+        
+        \noindent \textcolor{red}{Chapter5: How to design linear filters.}
+
+        We will introduce the following classic filters:
+            \begin{itemize}
+                \item FIR.
+                \item IIR.
+                \item Hilbert transform.
+            \end{itemize}
+        
+        \noindent \textcolor{red}{Chapter6: How to extend linear filters.}
+
+        We will introduce:
+            \begin{itemize}
+                \item Real signal $\longrightarrow$ Complex signal.
+                \item Multirate filters.
+            \end{itemize}
+        
+        \noindent \textcolor{red}{Chapter7: How to apply linear filters.}
+    
+    \newpage
+    \subsection{History of DSP}
+        Now let's briefly review the history of DSP.
+
+        \noindent \textcolor{red}{1730, Fourier, Fourier Transform.}
+
+        In the process of studying the heat conduction, 
+        Fourier discovered that:
+            \begin{center}
+                any complex motion $\longleftrightarrow$ linear combination of simple harmonic motion
+            \end{center}
+        and that is the Fourier Transform.
+
+        \noindent \textcolor{red}{1900, Marconi, Electromagnetic waves are simple harmonics}
+
+        This discovery extends Fourier Transform form thermal to electromagnetic.
+
+        \noindent \textcolor{red}{1930, Bode, Control Science.}
+
+        In the field of control science, the first step is perception. 
+        Perception is sampling to get data, and extract useful information from the data.
+        
+        \noindent \textcolor{red}{1940, Word War 2.}
+
+        During this period, two important discoveries were made:
+            \begin{itemize}
+                \item Wiener Filtering: the foundation of Optimal Filtering (Stochastic Process required).
+                \item Nyquist-Shannon Sampling Theorem.
+            \end{itemize}
+        
+        \noindent \textcolor{red}{1950, The Apollo Moon-Landing Project.}
+
+        This plan gave rise to Kalman Filtering, another methods of Optimal Filtering.
+
+        \noindent \textcolor{red}{1960, Cooley and Tukey, FFT.}
+
+        This is the origin of signal processing.
+
+        \noindent \textcolor{red}{1980, DSP (processor).}
+
+        A special CPU designed for signal processing task.
+
+
+        
+
+
+        
+
+
+
+        
+
+
+
         
