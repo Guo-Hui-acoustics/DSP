@@ -14,10 +14,16 @@
 \usepackage{float} % 支持 [H] 浮动选项
 \usepackage{subcaption} % 用于实现多图并排，是 subfigure 的现代化替代品
 \usepackage{amsmath} % 公式环境
+\usepackage{amssymb}
 \usepackage{empheq}
 \usepackage{tikz} % 绘图环境
+\usetikzlibrary{tikzmark}      % 用于在文本中创建 TikZ 节点
+\usetikzlibrary{fit}           % 用于 \node[fit=...] 来创建包裹节点的方框
+\usetikzlibrary{positioning}   % 用于 below=of 等语法
 \usepackage{color}
 \usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning} 
+\usetikzlibrary{shapes.geometric, calc, tikzmark} 
 
 % 引入 setspace 宏包,设置 1.5 倍行距
 \RequirePackage{setspace}
@@ -36,6 +42,7 @@
 }
 \renewcommand{\eqref}[1]{\hyperref[#1]{\textup{\tagform@{\ref*{#1}}}}}
 
+\usepackage{nameref} % 放到 hyperref 之后
 
 
 % 2. 为封面页定义新的存储命令

@@ -1,1 +1,649 @@
-\section{Lecture2}
+\section{Discrete Time Signal and System}
+    \subsection{Conventions}
+    Considering the continuous signal $x(t)$, we can find it has two elements:
+        \begin{itemize}
+            \item Independent Variable: It can be time or space, here is time $t$.
+            \item Dependent Variable.
+        \end{itemize}
+    Therefore, we can draw a conclusion: Signal is a function.
+
+    However, a mathmatical function often has analytical expression, for example:
+        \begin{equation}
+            x(t) = 3t^2
+        \end{equation}
+    But signals often don't have explicit analytical expressions, 
+    so we need to process the signal to get information.
+
+    Now let's introduce continuous-time signal and discrete-time signal:
+        \inserttikzpicture
+            {
+                % --- TikZ 绘图代码开始 ---
+                \tikzset{
+                    node distance=2.5cm, % 增加了节点间的垂直距离
+                    data_node/.style={ % 定义节点的样式
+                        font=\normalsize,
+                        rectangle,
+                        draw,         % 1. 用方框框住
+                        align=center, % 1. 文字居中（用于多行）
+                        minimum width=7cm, % 确保方框足够宽
+                        inner sep=8pt       % 增加一点内边距
+                    },
+                    arrow_style/.style={ % 定义箭头的样式
+                        -Stealth,
+                        thick
+                    }
+                }
+
+                % 1. 定义三个节点，从上到下排列
+                % 使用 \\ 来换行
+                \node[data_node] (xt) {
+                    $x(t)$, $t \in \mathbb{R}$ \\ 
+                    using parentheses and variable $t$
+                };
+                
+                \node[data_node, below=of xt] (xnt) {
+                    $x(nT)$ \\ 
+                    only get values at discrete time point
+                };
+                \node[data_node, below=of xnt] (xn) {
+                    $x[n]$, $n \in \mathbb{Z}$ \\ 
+                    using square brakets and variable $n$
+                };
+
+                % 2. 绘制箭头并添加标注 (这部分保持不变)
+                \draw[arrow_style] (xt) -- node[right, midway] {sampling} (xnt);
+                \draw[arrow_style] (xnt) -- node[right, midway] {simplify, variable changes to $n$} (xn);
+                % --- TikZ 绘图代码结束 ---
+            }
+            {Signals}
+            {fig:signals}
+    
+    \newpage
+    \subsection{Special Signals}
+    Here we introduce some signals.
+
+    First, Impulse siganl. Definition:
+        \begin{equation}
+            \delta[n] = 
+            \left\{
+            \begin{aligned}
+                1, \quad & n=0\\
+                0, \quad & n\neq 0
+            \end{aligned}
+            \right.
+        \end{equation}
+    The most impotant point about this signal is every signal $x[n]$ can be 
+    decomposed into the linear combination of shifted impulse $\delta[n-k]$:
+        \begin{equation}
+            x[n] = \sum_{k=-\infty}^{+\infty} x[k] \underbrace{\delta[n-k]}_{\text{\scriptsize fundamental element}}, k \in \mathbb{Z}
+        \end{equation}
+    
+    And this formula leads to an important idea:
+        \inserttikzpicture
+            {
+                % --- TikZ 绘图代码开始 ---
+                \tikzset{
+                    node distance=5cm, % 节点之间的水平距离
+                    obj_node/.style={ % 定义节点的样式
+                        font=\normalsize,
+                        rectangle,
+                        draw,
+                        thick,
+                        align=center,
+                        minimum width=3.5cm,
+                        minimum height=1cm,
+                        inner sep=8pt
+                    },
+                    arrow_style/.style={
+                        -Stealth,
+                        thick
+                    }
+                }
+                % 1. 定义两个节点，从左到右排列
+                \node[obj_node] (complex) {complex object};
+                \node[obj_node, right=of complex] (easy) {easy object};
+                % 2. 绘制箭头并添加标注
+                % 上方箭头 (从左到右)
+                % bend left=30 会使箭头向上弯曲
+                \draw[arrow_style] (complex) to[bend left=30] 
+                    node[above, midway] {decompose} (easy);
+                % 下方箭头 (从右到左)
+                % bend left=30 会使箭头向下弯曲 (相对于 R->L 的路径)
+                \draw[arrow_style] (easy) to[bend left=30] 
+                    node[below, midway] {linear combination} (complex);
+            }
+            {An important Idea}
+            {fig:decompose_combine}
+    \noindent This idea tells us:
+    Comples objects can be decomposed into the linear combination of many easy objects.
+    
+    Second, Unit step. Definition:
+        \begin{equation}
+            u[n] = 
+            \left\{
+            \begin{aligned}
+                1, \quad & n \geq 0\\
+                0, \quad & n < 0
+            \end{aligned}
+            \right.
+        \end{equation}
+    So what is the relation of $u[n]$ and $\delta[n]$? We can easily get:
+        \begin{equation}
+            \begin{aligned}
+                \delta[n] &= u[n] - u[n-1] \\
+                u[n]      &= \sum_{k=-\infty}^{n}\delta[k]
+            \end{aligned}
+        \end{equation}
+    
+    Finally, we should introduce an important function:
+        \begin{equation}
+            x_{\omega}(t) = \mathbf{e}^{\mathbf{j}\omega t}
+        \end{equation}
+    The subscript of $x$ is $\omega$, means the frequency.
+
+    Why do we introduce it? Because if we perform a linear transform on this function, the frequency doesn't change.
+    
+    And we can give the discrete-time version:
+        \begin{equation}
+            x_{\omega}[n] = \mathbf{e}^{\mathbf{j}\omega n}
+        \end{equation}
+    As $n \in \mathbb{Z}$, you can get an interesting property:
+        \begin{equation}
+            \begin{aligned}
+            x_{\omega + 2\pi}[n] &= \mathbf{e}^{\mathbf{j}(\omega+2\pi) n}\\
+                                 &= \mathbf{e}^{\mathbf{j}\omega n}
+            \end{aligned}
+        \end{equation}
+    This means, in the frequency domain, this function has periodicity, 
+    and the period is $2\pi$.
+
+    What frequency does $2\pi$ here correspond to in the physical world? You will get the answer in the following chapter.
+
+    \subsection{Discrete-Time System}
+    We use the following diagram to represent the system and it's function:
+        \inserttikzpicture
+            {
+                % --- TikZ 绘图代码开始 ---
+                \tikzset{
+                    node distance=2.5cm, % 节点之间的水平距离
+                    signal_node/.style={ % 定义信号节点的样式
+                        font=\normalsize,
+                        minimum width=1cm
+                    },
+                    system_block/.style={ % 定义系统方框节点的样式
+                        font=\normalsize,
+                        rectangle,
+                        draw,         % 绘制方框
+                        thick,        % 方框线条加粗
+                        minimum width=2cm,
+                        minimum height=1cm,
+                        align=center, % 文字居中
+                        inner sep=4pt
+                    },
+                    arrow_style/.style={ % 定义箭头的样式
+                        -Stealth,
+                        thick,
+                        draw % 确保线条被绘制
+                    }
+                }
+                % 1. 定义三个节点，从左到右排列
+                \node[signal_node] (input) {$\{x[n]\}_{n=-\infty}^{+\infty}$};
+                % 中央的 "system" 节点使用方框样式
+                \node[system_block, right=of input] (system) {T};
+                
+                \node[signal_node, right=of system] (output) {$\{y[n]\}_{n=-\infty}^{+\infty}$};
+
+                % 2. 使用两条直线箭头连接
+                % 默认就是直线箭头，无需特殊命令
+                \draw[arrow_style] (input) -- (system);
+                \draw[arrow_style] (system) -- (output);
+                % --- TikZ 绘图代码结束 ---
+            }
+            {$y[n] = T(\{x[n]\})$}
+            {fig:system_diagram}
+    Why does we use $\{x[n]\}_{n=-\infty}^{+\infty}$ and $\{y[n]\}_{n=-\infty}^{+\infty}$ to represent the input and output?
+    Because the sysetem is divided into:
+        \begin{itemize}
+            \item Memory: $y[n]$ (output at time point $n$) depends on current and past inputs.
+            \item Memoryless: $y[n]$ (output at time point $n$) only depends on current time point input $x[n]$.
+        \end{itemize}
+    So when we express the function of a system using symbols, a more rigorous way of writiing it is :
+        \begin{equation}
+            y[n] = T(\{x[n]\})
+        \end{equation}
+    This means the system $T$ operates on a sequence of inputs, not only one input at time $n$.
+    But for simplicity, we write it:
+        \begin{equation}
+             y[n] = T(x[n])
+        \end{equation}
+    
+    Next, we introduce some typical systems.
+
+    \textbf{Delay Device}:
+        \begin{equation}
+            y[n] = x[n-n_d] 
+        \end{equation}
+    $n_d$ is a scalar.
+
+    How should we understand the function of the system? We can give an example.
+
+    Suppose $n_d$ is 2, and we want to get the output at time 3, that is $y[3]$. 
+    According to the formula, we have:
+        \begin{equation}
+            \begin{aligned}
+                y[3] &= x[3-n_d]\\
+                     &= x[1]
+            \end{aligned}
+        \end{equation}
+    This means, if we want to get the current ouput, we need to use the past input. 
+    So this system is \textbf{memory}. 
+
+    \textbf{Integrator}:
+        \begin{equation}
+            y[n] = \sum_{k=-\infty}^{n}x[k]
+        \end{equation}
+    This formula leads to an important idea:
+        \inserttikzpicture
+            {
+                % --- TikZ 绘图代码开始 ---
+                \tikzset{
+                    node distance=4cm, % 两个椭圆之间的水平距离
+                    op_ellipse/.style={ % 椭圆样式
+                        ellipse, 
+                        draw, 
+                        thick, 
+                        minimum width=3cm, 
+                        minimum height=4cm,
+                        inner sep=10pt % 增加内边距以容纳文字
+                    },
+                    op_element/.style={ % 椭圆内部元素的样式
+                        font=\normalsize, % 使用 \normalsize，如果需要默认正文大小
+                        align=center,
+                        inner sep=2pt
+                    },
+                    arrow_style/.style={ % 双向箭头样式
+                        <->, % 双向箭头
+                        thick
+                    }
+                }
+                % 1. 绘制左侧椭圆 (CT)
+                \node[op_ellipse] (ct_ops) {};
+                % 在椭圆内部放置元素
+                \node[op_element] at (ct_ops.north) [yshift=-1.2cm] (integral) {integral, $\int$};
+                \node[op_element, below=0.8cm of integral] (derivative) {derivative, $\frac{d}{dt}$};
+                % 2. 绘制右侧椭圆 (DT)
+                \node[op_ellipse, right=of ct_ops] (dt_ops) {};
+                % 在椭圆内部放置元素，并命名以便连接
+                \node[op_element] at (dt_ops.north) [yshift=-1.2cm] (sum) {sum, $\sum$};
+                \node[op_element, below=0.8cm of sum] (subtract) {differential, $\nabla$};
+                % 3. 连接元素
+                \draw[arrow_style] (integral) -- (sum);
+                \draw[arrow_style] (derivative) -- (subtract);
+                % 4. 在椭圆上方标注文字
+                % 为了对齐，我们在椭圆的 north 锚点上方放置标签
+                \node[above=0.3cm of ct_ops.north, font=\normalsize] (ct_label) {CT};
+                \node[above=0.3cm of dt_ops.north, font=\normalsize] (dt_label) {DT};
+                % --- TikZ 绘图代码结束 ---
+            }
+            {Continuous and Discrete Time Operations}
+            {fig:ct_dt_operations}
+    \noindent Obviously, Integrator is \textbf{memory}.
+
+    \textbf{Square Device}:
+        \begin{equation}
+            y[x] = x^2[n]
+        \end{equation}
+    Obviously, Integrator is \textbf{memoryless}.
+
+    \subsection{Linearity}
+        Linearity is an important property of systems, and also the key to our research.
+        
+        Let's give the definition from the surface.
+        If a system $T$ is a linear system, then:
+            \begin{itemize}
+                \item Additivity: $T(x[n] + y[n]) = T(x[n]) + T(y[n])$.
+                \item Scaling property: $T(\alpha x[n]) = \alpha T(x[n])$.
+            \end{itemize}
+        (we don't know it's "memory" or "memoryless").
+
+        This definition just gives us the surface input-output relation, but the system is still a black box.
+        Now let's analyze the internal structure of the system using \nameref{fig:decompose_combine}.
+
+        Suppose $T$ is a linear system, look at the following operations:
+            \inserttikzpicture
+                {
+                    % --- TikZ 绘图代码开始 ---
+                    \tikzset{
+                        node distance=3cm, 
+                        process_node/.style={ 
+                            font=\normalsize,
+                            rectangle,
+                            draw,
+                            thick,
+                            minimum width=10cm, 
+                            minimum height=1.5cm,
+                            align=center,
+                            inner sep=8pt
+                        },
+                        arrow_label/.style={ 
+                            font=\normalsize,
+                            midway,
+                            right
+                        },
+                        arrow_style/.style={ 
+                            -Stealth, % 箭头在路径的 "末端"
+                            thick,
+                            draw
+                        }
+                    }
+
+                    % 1. 定义第一个节点
+                    \node[process_node] (node1) {$x[n]$};
+                    
+                    % 3. 定义第二个节点
+                    \node[process_node, below=of node1] (node2) {
+                        $x[n]=\sum_{k=-\infty}^{+\infty}x[k]\boxed{\delta[n-k]}$
+                    };
+                    
+                    % 5. 定义第三个节点
+                    \node[process_node, below=of node2] (node3) {
+                        $y[n]=T\left(\sum_{k=-\infty}^{+\infty}x[k]\boxed{\delta[n-k]}\right)$
+                    };
+                    
+                    % 7. 定义第四个节点
+                    \node[process_node, below=of node3] (node4) {
+                        $y[n] = \sum_{k=-\infty}^{+\infty}x[k]\boxed{h(n,k)}$
+                    };
+
+                    % --- 绘制箭头和标注 ---
+
+                    % 2. 节点1指向节点2的箭头
+                    \draw[arrow_style] (node1) -- node[arrow_label] {decompose} (node2);
+                    
+                    % 6. 节点2指向节点3的箭头 (T is linear)
+                    \draw[arrow_style] (node2)-- (node3);
+                    
+                    % 4. 节点2指向节点3的箭头 (T 作用)
+                    \coordinate (midpoint) at ($(node2.south)!.5!(node3.north)$);
+                    
+                    % --- 这是修正后的代码 ---
+                    % 1. 路径从右侧 (midpoint ++(2.5,0)) 指向中点 (midpoint)
+                    % 2. arrow_style 的 -Stealth 确保箭头在中点处
+                    % 3. node[right, pos=0, ...] 在路径的"起点"(pos=0)的"右侧"放置标签 "T"
+                    \draw[arrow_style] (midpoint) ++(2.5,0) 
+                        -- node[right, pos=0, font=\normalsize] {T} (midpoint);
+                    % --------------------------
+                        
+                    % 绘制节点3指向节点4的箭头
+                    \draw[arrow_style] (node3) --node[arrow_label] {T is linear} (node4);
+                    
+                    % --- TikZ 绘图代码结束 ---
+                }
+                {System Process}
+                {fig:system_process}
+
+        So we realize the following function:
+            \inserttikzpicture
+                {
+                    % --- TikZ 绘图代码开始 ---
+                    \tikzset{
+                        % 定义节点间的默认垂直和水平距离
+                        node distance=3cm and 6cm, 
+                        % 顶部节点的样式 (较窄)
+                        top_node/.style={
+                            font=\normalsize,
+                            rectangle,
+                            draw, thick,
+                            align=center,
+                            minimum width=3cm,
+                            minimum height=1.5cm
+                        },
+                        % 底部节点的样式 (较宽, 以容纳公式)
+                        bottom_node/.style={
+                            font=\normalsize,
+                            rectangle,
+                            draw, thick,
+                            align=center,
+                            minimum width=4.5cm,
+                            minimum height=1.5cm
+                        },
+                        % 箭头样式
+                        arrow_style/.style={
+                            -Stealth,
+                            thick,
+                            draw
+                        },
+                        % 箭头标签样式
+                        label_above/.style={font=\normalsize, midway, above},
+                        label_right/.style={font=\normalsize, midway, right, align=left}
+                    }
+
+                    % --- 1. 定义四个节点 ---
+                    
+                    % 左上角节点
+                    \node[top_node] (TL) {$x[n]$};
+                    
+                    % 右上角节点
+                    \node[top_node, right=of TL] (TR) {$y[n]$};
+                    
+                    % 左下角节点
+                    \node[bottom_node, below=of TL] (BL) {
+                        $\sum_{k=-\infty}^{+\infty}x[k]\boxed{\delta[n-k]}$
+                    };
+                    
+                    % 右下角节点 (放置在 TR 的下方，以自动对齐)
+                    \node[bottom_node, below=of TR] (BR) {
+                        $\sum_{k=-\infty}^{+\infty}x[k]\boxed{T\left(\delta[n-k]\right)}$
+                    };
+
+                    % --- 2. 绘制箭头和标注 ---
+
+                    % 2. TL -> TR
+                    \draw[arrow_style] (TL) -- 
+                        node[label_above] {linear system T} (TR);
+                        
+                    % 4. TL -> BL
+                    \draw[arrow_style] (TL) -- 
+                        node[label_right] {decompose\\  using $\delta[n-k]$} (BL);
+                        
+                    % 6. TR -> BR
+                    \draw[arrow_style] (TR) -- 
+                        node[label_right] {decompose  \\ using $T(\delta[n-k])$} (BR);
+                    
+                    % --- TikZ 绘图代码结束 ---
+                }
+                {Summary of Linear System Derivation}
+                {fig:system_derivation_summary}
+
+        That is to say, we decompose the input $x[n]$ into the linear combination of impulses.
+        And as the system $T$ is linear, the output can also be decomposed into the linear combinaton, 
+        and the elements is impulse response:
+                    \begin{equation}
+                        h(n,k) = T(\delta[n-k])
+                    \end{equation} 
+
+        \subsection{Matrix Perspective}
+        Matrix is also a linear transform.
+
+        Suppose we have the following matrix $T$:
+                    \begin{equation}
+                        \begin{bmatrix}
+                            a_{11} & a_{12} & a_{13}\\
+                            a_{21} & a_{22} & a_{23}\\
+                            a_{31} & a_{32} & a_{33}
+                        \end{bmatrix}
+                    \end{equation}
+        We use this matrix to operate on the following column vector:
+             \begin{equation}
+                    \begin{bmatrix}
+                            x_1\\
+                            x_2\\
+                            x_3
+                    \end{bmatrix}
+            \end{equation}
+        The results are:
+            \begin{equation}
+                    % --- 用 \left[ 和 \right] 以及一个 "外部" array 来重建矩阵 ---
+                    \left[
+                    \begin{array}{c@{\,}c@{\,}c} % c@{\,}c@{\,}c 表示三列，列间加一个"小空格"
+                        
+                        % 第 1 列
+                        \boxed{
+                            \begin{array}{@{}c@{}} % "@{}c@{}" 表示一个没有多余边距的内部列
+                                a_{11} \\ a_{21} \\ a_{31}
+                            \end{array}
+                        }
+                        & % 外部 array 的下一列
+                        
+                        % 第 2 列
+                        \boxed{
+                            \begin{array}{@{}c@{}}
+                                a_{12} \\ a_{22} \\ a_{32}
+                            \end{array}
+                        }
+                        & % 外部 array 的下一列
+
+                        % 第 3 列
+                        \boxed{
+                            \begin{array}{@{}c@{}}
+                                a_{13} \\ a_{23} \\ a_{33}
+                            \end{array}
+                        }
+                    
+                    \end{array} % 结束外部 array
+                    \right]
+                    % --- 你的公式的其余部分 ---
+                    \begin{bmatrix}
+                        x_1\\
+                        x_2\\
+                        x_3
+                    \end{bmatrix}
+                    =
+                    x_1\begin{bmatrix}
+                        a_{11}\\
+                        a_{21}\\
+                        a_{31}
+                    \end{bmatrix} +
+                    x_2\begin{bmatrix}
+                        a_{12}\\
+                        a_{22}\\
+                        a_{32}
+                    \end{bmatrix}
+                    +
+                    x_3\begin{bmatrix}
+                        a_{13}\\
+                        a_{23}\\
+                        a_{33}
+                    \end{bmatrix}
+                \end{equation}
+    How can we using the idea above to explain this?
+
+    Actually, we perfrom the following operations:
+                \begin{equation}
+                    \begin{aligned}
+                    T \begin{bmatrix}
+                            x_1\\
+                            x_2\\
+                            x_3
+                    \end{bmatrix}
+                    &= 
+                    T(
+                    x_1\begin{bmatrix}
+                            1\\
+                            0\\
+                            0
+                    \end{bmatrix}
+                    +
+                    x_2\begin{bmatrix}
+                            0\\
+                            1\\
+                            0
+                    \end{bmatrix}
+                    +
+                    x_3\begin{bmatrix}
+                            0\\
+                            0\\
+                            1
+                    \end{bmatrix}
+                    )\\
+                    &=
+                    x_1T(\begin{bmatrix}
+                            1\\
+                            0\\
+                            0
+                    \end{bmatrix})
+                    +
+                    x_2T(\begin{bmatrix}
+                            0\\
+                            1\\
+                            0
+                    \end{bmatrix})
+                    +
+                    x_3T(\begin{bmatrix}
+                            0\\
+                            0\\
+                            1
+                    \end{bmatrix}
+                    )             
+                    \end{aligned}
+                \end{equation}
+    We have the similar "impulse":
+        \begin{equation}
+            \begin{aligned}
+                \begin{bmatrix}
+                            1\\
+                            0\\
+                            0
+                    \end{bmatrix},\quad
+                \begin{bmatrix}
+                            0\\
+                            1\\
+                            0
+                    \end{bmatrix},\quad
+               \begin{bmatrix}
+                            0\\
+                            0\\
+                            1
+                    \end{bmatrix}
+            \end{aligned}
+        \end{equation}
+    And we have the similar "impulse response":
+        \begin{equation}
+            \begin{aligned}
+                T(\begin{bmatrix}
+                            1\\
+                            0\\
+                            0
+                    \end{bmatrix}) = \begin{bmatrix}
+                        a_{11}\\
+                        a_{21}\\
+                        a_{31}
+                    \end{bmatrix},\quad
+                T(\begin{bmatrix}
+                            0\\
+                            1\\
+                            0
+                    \end{bmatrix}) =\begin{bmatrix}
+                        a_{12}\\
+                        a_{22}\\
+                        a_{32}
+                    \end{bmatrix},\quad
+                T(\begin{bmatrix}
+                            0\\
+                            0\\
+                            1
+                    \end{bmatrix})=\begin{bmatrix}
+                        a_{13}\\
+                        a_{23}\\
+                        a_{33}
+                    \end{bmatrix}
+            \end{aligned}
+        \end{equation}
+    From this example: "impulse response" is a nature of the system itself, has nothing to do with the input.
+
+
+
+
+
+
+

@@ -4,4 +4,9 @@
 \contentsline {subsection}{\numberline {1.3}Digital vs Analog}{1}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}Course Arrangement}{2}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}History of DSP}{4}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Lecture2}{5}{section.2}%
+\contentsline {section}{\numberline {2}Discrete Time Signal and System}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Conventions}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Special Signals}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Discrete-Time System}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Linearity}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Matrix Perspective}{10}{subsection.2.5}%
