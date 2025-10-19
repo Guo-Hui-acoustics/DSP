@@ -9,4 +9,9 @@
 \contentsline {subsection}{\numberline {2.2}Special Signals}{6}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Discrete-Time System}{7}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Linearity}{9}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Matrix Perspective}{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.5}Understanding Impulse Response}{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Linearity-Matrix Perspective}{12}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Time-Invariant}{13}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}LTI System}{13}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Convolution}{14}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}An Example of Convolution}{15}{subsection.2.10}%
