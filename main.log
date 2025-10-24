@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  20 OCT 2025 11:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  24 OCT 2025 15:29
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -892,7 +892,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.35     \newpage
+l.36     \newpage
                   [1] (./content/chapter1.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -915,29 +915,22 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 9A99FAE5EB44F5A67CDABDEA3B65345F;2452
-(rerunfilecheck)             After:  84348183B4A7B131F1ECA4C3FCA5995C;2511.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 2C02BE93B6A2600622E89E1970435673;2852.
  ) 
 Here is how much of TeX's memory you used:
- 39875 strings out of 474116
- 930330 string characters out of 5735645
+ 39876 strings out of 474116
+ 930341 string characters out of 5735645
  1950190 words of memory out of 5000000
- 61487 multiletter control sequences out of 15000+600000
+ 61488 multiletter control sequences out of 15000+600000
  600306 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,145p,748b,2366s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on main.pdf (22 pages, 240583 bytes).
+Output written on main.pdf (22 pages, 241336 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
- 298 compressed objects within 3 object streams
+ 360 PDF objects out of 1000 (max. 8388607)
+ 302 compressed objects within 4 object streams
  97 named destinations out of 1000 (max. 500000)
- 149 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
