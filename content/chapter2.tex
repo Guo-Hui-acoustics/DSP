@@ -62,7 +62,8 @@
     \subsection{Special Signals}
     Here we introduce some signals.
 
-    First, Impulse siganl. Definition:
+    \subsubsection{Impulse siganl}
+    Definition:
         \begin{equation}
             \delta[n] = 
             \left\{
@@ -117,7 +118,8 @@
     \noindent This idea tells us:
     Comples objects can be decomposed into the linear combination of many easy objects.
     
-    Second, Unit step. Definition:
+    \subsubsection{Unit step}
+    Definition:
         \begin{equation}
             u[n] = 
             \left\{
@@ -135,7 +137,7 @@
             \end{aligned}
         \end{equation}
     
-    Finally, we should introduce an important function:
+    \subsubsection{an Important Function}
         \begin{equation}
             x_{\omega}(t) = \mathbf{e}^{\mathbf{j}\omega t}
         \end{equation}
@@ -219,7 +221,7 @@
     
     Next, we introduce some typical systems.
 
-    \textbf{Delay Device}:
+    \subsubsection{Delay Device}
         \begin{equation}
             y[n] = x[n-n_d] 
         \end{equation}
@@ -238,7 +240,7 @@
     This means, if we want to get the current ouput, we need to use the past input. 
     So this system is \textbf{memory}. 
 
-    \textbf{Integrator}:
+    \subsubsection{Integrator}
         \begin{equation}
             y[n] = \sum_{k=-\infty}^{n}x[k]
         \end{equation}
@@ -289,7 +291,7 @@
             {fig:ct_dt_operations}
     \noindent Obviously, Integrator is \textbf{memory}.
 
-    \textbf{Square Device}:
+    \subsubsection{Square Device}
         \begin{equation}
             y[x] = x^2[n]
         \end{equation}
@@ -902,7 +904,7 @@
             y[n] = x[n] \ast h[n] = \sum_{k=-\infty}^{+\infty} x[k]h[n-k]
         \end{equation}
     
-    \noindent \textbf{Method1. Analytical Calculations.}
+    \subsubsection{Method1. Analytical Calculations.}
 
     Expand the convolution formula:
         \begin{equation}
@@ -949,7 +951,7 @@
         \end{equation}
     
     \newpage
-    \noindent \textbf{Graphical Solution}
+    \subsubsection{Graphical Solution}
     
     The graph of $h[n]$ and $x[n]$ are as follows, here we choose $a = 1/2$:
         \inserttikzpicture
