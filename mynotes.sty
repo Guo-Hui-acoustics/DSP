@@ -69,7 +69,94 @@
             % 4. 中心"图像" (临时占位符)
             \vspace{0.2cm} % 顶部横线下的间距
             \begin{center}
-                {\fontsize{60}{72}\selectfont \bfseries Digital Signal Processing}
+                % --- PGFPlots 样式定义 (必须放在这里) ---
+                \pgfplotsset{
+                    compat=1.18, % 确保已加载 pgfplots
+                    % 样式 1: 用于输入/输出信号图
+                    signalplot/.style={
+                        width=5.5cm, height=3.5cm, % 图像尺寸
+                        hide axis, samples=101, domain=0:12.566,
+                        enlargelimits=false, ymin=-3.2, ymax=3.2,
+                    },
+                    % 样式 2: 用于滤波器频率响应图
+                    filterplot/.style={
+                        width=4.5cm, height=3.5cm, % 滤波器图像尺寸 (等高)
+                        samples=51, domain=-5:5, ymin=0, ymax=1.2,
+                        axis lines=middle, enlargelimits=false,
+                        xticklabels={}, yticklabels={},
+                        xlabel=$\omega$, ylabel=$|H(j\omega)|$,
+                        every axis x label/.style={at=(current axis.right of origin), anchor=west, font=\small},
+                        every axis y label/.style={at=(current axis.above origin), anchor=south, font=\small}
+                    }
+                }
+                % --- 使用 savebox 预先绘制所有三个图像 (必须放在这里) ---
+
+                % 盒子 1: 混合信号
+                \newsavebox{\mixedsignalplot}
+                \savebox{\mixedsignalplot}{%
+                    \begin{tikzpicture}
+                    \begin{axis}[signalplot]
+                        \addplot [blue, thick] {sin(deg(x)) + sin(deg(2*x)) + sin(deg(4*x))};
+                        \draw [black, dashed, opacity=0.5] (axis cs:0,0) -- (axis cs:12.566,0);
+                    \end{axis}
+                    \end{tikzpicture}%
+                }
+
+                % 盒子 2: 纯 sinx 信号
+                \newsavebox{\sinesignalplot}
+                \savebox{\sinesignalplot}{%
+                    \begin{tikzpicture}
+                    \begin{axis}[signalplot]
+                        \addplot [blue, thick] {sin(deg(x))};
+                        \draw [black, dashed, opacity=0.5] (axis cs:0,0) -- (axis cs:12.566,0);
+                    \end{axis}
+                    \end{tikzpicture}%
+                }
+
+                % 盒子 3: 低通滤波器 (L-P Filter)
+                \newsavebox{\lpfplot}
+                \savebox{\lpfplot}{%
+                    \begin{tikzpicture}
+                    \begin{axis}[filterplot]
+                        \addplot [red, thick, smooth] {exp(-0.2*x^2)};
+                    \end{axis}
+                    \end{tikzpicture}%
+                }
+
+                % --- TikZ 图像开始 (绘制最终框图) ---
+                \begin{tikzpicture}[
+                    % 样式：用于放置绘图的节点 (带边框)
+                    plot_node/.style={
+                        draw, 
+                        rectangle, 
+                        inner sep=0pt % 边框紧贴图像
+                    },
+                    % 样式：设置默认箭头
+                    >=Stealth
+                  ]
+                  
+                  % 1. 放置左侧的 'Input' 图像
+                  \node (in2) [plot_node] {\usebox{\mixedsignalplot}};
+                  
+                  % 2. 放置中心的 'Filter' 图像
+                  \node (sys2) [plot_node, right=0.5cm of in2] {\usebox{\lpfplot}};
+                  
+                  % 3. 放置右侧的 'Output' 图像
+                  \node (out2) [plot_node, right=0.5cm of sys2] {\usebox{\sinesignalplot}};
+                  
+                  % 4. 绘制箭头
+                  \draw [->] (in2) -- (sys2);
+                  \draw [->] (sys2) -- (out2);
+                  
+                  \node [
+                      draw, black,                   % 绘制黑色边框
+                      rounded corners=3pt,           % 轻微的圆角
+                      % 适配所有三个图像节点
+                      fit=(in2) (sys2) (out2), 
+                      inner sep=10pt                 % 边框与内容的间距 (可调整)
+                  ] {};
+
+                \end{tikzpicture}
             \end{center}
             \vspace{0.2cm} % 底部横线上的间距
         \end{minipage}
