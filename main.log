@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  6 NOV 2025 19:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  6 NOV 2025 20:25
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -961,10 +961,10 @@ LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
@@ -977,10 +977,10 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
@@ -993,10 +993,10 @@ LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
@@ -1006,130 +1006,130 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [8]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [9]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [13]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [17])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [18] (./content/chapter3.tex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 20.29991pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1150,7 +1150,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  99i,16n,145p,722b,2366s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on main.pdf (22 pages, 293675 bytes).
+Output written on main.pdf (22 pages, 293683 bytes).
 PDF statistics:
  423 PDF objects out of 1000 (max. 8388607)
  361 compressed objects within 4 object streams
