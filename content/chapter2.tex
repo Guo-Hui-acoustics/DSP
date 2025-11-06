@@ -42,7 +42,7 @@
                 };
                 
                 \node[data_node, below=of xt] (xnt) {
-                    $x(nT)$ \\ 
+                    $x(nT)$, $n \in \mathbb{Z}$ \\ 
                     only get values at discrete time point
                 };
                 \node[data_node, below=of xnt] (xn) {
@@ -51,7 +51,7 @@
                 };
 
                 % 2. 绘制箭头并添加标注 (这部分保持不变)
-                \draw[arrow_style] (xt) -- node[right, midway] {sampling} (xnt);
+                \draw[arrow_style] (xt) -- node[right, midway] {sampling, $T$ is a scalar} (xnt);
                 \draw[arrow_style] (xnt) -- node[right, midway] {simplify, variable changes to $n$} (xn);
                 % --- TikZ 绘图代码结束 ---
             }

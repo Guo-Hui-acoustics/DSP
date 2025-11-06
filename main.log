@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  26 OCT 2025 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  6 NOV 2025 19:44
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -692,7 +692,27 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip62
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 40.
+Package hyperref Info: Option `colorlinks' set `true' on input line 45.
+ (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+\f@nch@headwidth=\skip63
+\f@nch@O@elh=\skip64
+\f@nch@O@erh=\skip65
+\f@nch@O@olh=\skip66
+\f@nch@O@orh=\skip67
+\f@nch@O@elf=\skip68
+\f@nch@O@erf=\skip69
+\f@nch@O@olf=\skip70
+\f@nch@O@orf=\skip71
+) (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/latex/lastpage/lastpage.sty
+Package: lastpage 2023/10/14 v2.0e lastpage: 2.09 or 2e? (HMM)
+ (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/latex/lastpage/lastpage2e.sty
+Package: lastpage2e 2023/10/14 v2.0e Decide which 2e lastpage version to use (HMM)
+ (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/latex/lastpage/lastpagemodern.sty
+Package: lastpagemodern 2023-10-14 v2.0e Refers to last page's name (HMM; JPG)
+\c@lastpagecount=\count353
+) 
+))
 \ContentAboveRuleBox=\box72
 \TotalBoxHeight=\dimen342
 \SpaceBefore=\dimen343
@@ -702,60 +722,60 @@ Package: minted 2023/12/18 v2.9 Yet another Pygments shim for LaTeX
 Package: fvextra 2023/11/28 v1.6.1 fvextra - extensions and patches for fancyvrb
  (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
-\FV@CodeLineNo=\count353
+\FV@CodeLineNo=\count354
 \FV@InFile=\read3
 \FV@TabBox=\box73
-\c@FancyVerbLine=\count354
-\FV@StepNumber=\count355
+\c@FancyVerbLine=\count355
+\FV@StepNumber=\count356
 \FV@OutFile=\write4
 ) (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
 ) (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2023/05/20 line numbers on paragraphs v5.3
-\linenopenalty=\count356
+\linenopenalty=\count357
 \output=\toks47
-\linenoprevgraf=\count357
+\linenoprevgraf=\count358
 \linenumbersep=\dimen344
 \linenumberwidth=\dimen345
-\c@linenumber=\count358
-\c@pagewiselinenumber=\count359
-\c@LN@truepage=\count360
-\c@internallinenumber=\count361
-\c@internallinenumbers=\count362
+\c@linenumber=\count359
+\c@pagewiselinenumber=\count360
+\c@LN@truepage=\count361
+\c@internallinenumber=\count362
+\c@internallinenumbers=\count363
 \quotelinenumbersep=\dimen346
 \bframerule=\dimen347
 \bframesep=\dimen348
 \bframebox=\box74
-\linenoamsmath@ams@eqpen=\count363
+\linenoamsmath@ams@eqpen=\count364
 LaTeX Info: Redefining \\ on input line 3180.
 )
-\c@FancyVerbWriteLine=\count364
-\c@FancyVerbBufferIndex=\count365
-\c@FancyVerbBufferLength=\count366
-\c@FancyVerbBufferLine=\count367
-\c@FV@oldbufferlength=\count368
-\c@FV@TrueTabGroupLevel=\count369
-\c@FV@TrueTabCounter=\count370
+\c@FancyVerbWriteLine=\count365
+\c@FancyVerbBufferIndex=\count366
+\c@FancyVerbBufferLength=\count367
+\c@FancyVerbBufferLine=\count368
+\c@FV@oldbufferlength=\count369
+\c@FV@TrueTabGroupLevel=\count370
+\c@FV@TrueTabCounter=\count371
 \FV@TabBox@Group=\box75
-\FV@TmpLength=\skip63
-\c@FV@HighlightLinesStart=\count371
-\c@FV@HighlightLinesStop=\count372
-\FV@LoopCount=\count373
+\FV@TmpLength=\skip72
+\c@FV@HighlightLinesStart=\count372
+\c@FV@HighlightLinesStop=\count373
+\FV@LoopCount=\count374
 \FV@NCharsBox=\box76
 \FV@BreakIndent=\dimen349
-\FV@BreakIndentNChars=\count374
+\FV@BreakIndentNChars=\count375
 \FV@BreakSymbolSepLeft=\dimen350
-\FV@BreakSymbolSepLeftNChars=\count375
+\FV@BreakSymbolSepLeftNChars=\count376
 \FV@BreakSymbolSepRight=\dimen351
-\FV@BreakSymbolSepRightNChars=\count376
+\FV@BreakSymbolSepRightNChars=\count377
 \FV@BreakSymbolIndentLeft=\dimen352
-\FV@BreakSymbolIndentLeftNChars=\count377
+\FV@BreakSymbolIndentLeftNChars=\count378
 \FV@BreakSymbolIndentRight=\dimen353
-\FV@BreakSymbolIndentRightNChars=\count378
-\c@FancyVerbLineBreakLast=\count379
+\FV@BreakSymbolIndentRightNChars=\count379
+\c@FancyVerbLineBreakLast=\count380
 \FV@LineBox=\box77
 \FV@LineIndentBox=\box78
-\c@FV@BreakBufferDepth=\count380
+\c@FV@BreakBufferDepth=\count381
 \FV@LineWidth=\dimen354
 ) (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
@@ -770,7 +790,7 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )) (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip64
+\OuterFrameSep=\skip73
 \fb@frw=\dimen355
 \fb@frh=\dimen356
 \FrameRule=\dimen357
@@ -779,10 +799,10 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \minted@appexistsfile=\read4
 \minted@bgbox=\box79
 \minted@code=\write5
-\c@minted@FancyVerbLineTemp=\count381
-\c@minted@pygmentizecounter=\count382
+\c@minted@FancyVerbLineTemp=\count382
+\c@minted@pygmentizecounter=\count383
 \@float@every@listing=\toks48
-\c@listing=\count383
+\c@listing=\count384
 )
 runsystem(if not exist _minted-main mkdir _minted-main)...executed.
 
@@ -820,16 +840,16 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
  (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count384
+\scratchcounter=\count385
 \scratchdimen=\dimen359
 \scratchbox=\box80
-\nofMPsegments=\count385
-\nofMParguments=\count386
+\nofMPsegments=\count386
+\nofMParguments=\count387
 \everyMPshowfont=\toks49
-\MPscratchCnt=\count387
+\MPscratchCnt=\count388
 \MPscratchDim=\dimen360
-\MPnumerator=\count388
-\makeMPintoPDFobject=\count389
+\MPnumerator=\count389
+\makeMPintoPDFobject=\count390
 \everyMPtoPDFconversion=\toks50
 ) (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -837,8 +857,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@mv@tabular=\count390
-\c@mv@boldtabular=\count391
+\c@mv@tabular=\count391
+\c@mv@boldtabular=\count392
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -936,6 +956,16 @@ l.24     \makeabstractpage
 ] (./content/chapter1.tex
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 2.
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 12.0pt on input line 44.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -943,13 +973,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 l.44     \newpage
                   [1]
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 146.
-
-Overfull \hbox (38.84047pt too wide) in paragraph at lines 146--146
- [][] 
- []
-
+(Font)              scaled to size 10.95pt on input line 148.
 )
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -957,12 +990,150 @@ l.36     \newpage
                   [2] (./content/chapter2.tex
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 5.
- [3]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[3]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.0pt on input line 79.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 79.
- [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17]) [18] (./content/chapter3.tex) [19] (./main.aux)
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[4]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[5]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[6]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[7]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[8]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[9]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[10]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[11]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[12]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[13]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[14]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[15]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[16]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[17])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[18] (./content/chapter3.tex)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.29991pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.29991pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.29991pt}.
+
+[19] 
+enddocument/afterlastpage: lastpage setting LastPage.
+(./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -971,18 +1142,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: C2B6897D02F0287F893B0D987784CB74;3828.
  ) 
 Here is how much of TeX's memory you used:
- 40663 strings out of 474116
- 945435 string characters out of 5735645
- 1973190 words of memory out of 5000000
- 62256 multiletter control sequences out of 15000+600000
- 598123 words of font info for 78 fonts, out of 8000000 for 9000
+ 40935 strings out of 474116
+ 950516 string characters out of 5735645
+ 1974190 words of memory out of 5000000
+ 62514 multiletter control sequences out of 15000+600000
+ 598431 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,16n,145p,722b,2366s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on main.pdf (22 pages, 284289 bytes).
+Output written on main.pdf (22 pages, 293675 bytes).
 PDF statistics:
- 404 PDF objects out of 1000 (max. 8388607)
- 342 compressed objects within 4 object streams
+ 423 PDF objects out of 1000 (max. 8388607)
+ 361 compressed objects within 4 object streams
  103 named destinations out of 1000 (max. 500000)
  205 words of extra memory for PDF output out of 10000 (max. 10000000)
 
