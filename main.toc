@@ -2,7 +2,7 @@
 \contentsline {subsection}{\numberline {1.1}Some Suggestions}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Digital vs Analog}{1}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}History of DSP}{2}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Discrete Time Signal and System (Time Domain)}{3}{section.2}%
+\contentsline {section}{\numberline {2}DT Signal and System (Time Domain)}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Conventions}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Special Signals}{4}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Impulse siganl}{4}{subsubsection.2.2.1}%
@@ -21,4 +21,4 @@
 \contentsline {subsection}{\numberline {2.10}An Example of Convolution}{14}{subsection.2.10}%
 \contentsline {subsubsection}{\numberline {2.10.1}Method1. Analytical Calculations.}{14}{subsubsection.2.10.1}%
 \contentsline {subsubsection}{\numberline {2.10.2}Graphical Solution}{16}{subsubsection.2.10.2}%
-\contentsline {section}{\numberline {3}Discrete Time Signal and System (Frequency Domain)}{19}{section.3}%
+\contentsline {section}{\numberline {3}DT Signal and System (Frequency Domain)}{19}{section.3}%

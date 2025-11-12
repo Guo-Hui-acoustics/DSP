@@ -54,11 +54,11 @@
 \pagestyle{fancy} % 将默认页面样式设为 fancy
 \fancyhf{} % 清空所有当前的页眉页脚设置
 % 2.1. 页眉设置，PDF 在页眉显示章节标题 
-\fancyhead[L]{\ttfamily\leftmark} % \leftmark 会自动获取 \section{...} 的内容
+\fancyhead[L]{\leftmark} % \leftmark 会自动获取 \section{...} 的内容
 \fancyhead[R]{} % 右侧页眉留空
 % 2.2. 页脚设置
-\fancyfoot[L]{\ttfamily \@notetitle} % 页脚左侧，使用已定义的 \@notetitle 变量
-\fancyfoot[R]{\ttfamily Page \thepage\ / \pageref{LastPage}} % PDF 在页脚右侧显示 "Page X von Y" 
+\fancyfoot[L]{\@notetitle} % 页脚左侧，使用已定义的 \@notetitle 变量
+\fancyfoot[R]{\thepage\ / \pageref{LastPage}} % PDF 在页脚右侧显示 "Page X von Y" 
 % 2.3. 分割线
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
