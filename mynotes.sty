@@ -46,25 +46,33 @@
 \renewcommand{\eqref}[1]{\hyperref[#1]{\textup{\tagform@{\ref*{#1}}}}}
 \usepackage{nameref} 
 % 1.6. 页眉和页脚
-\usepackage{fancyhdr} % 用于自定义页眉页脚
+\usepackage{fancyhdr} 
 \usepackage{lastpage}
+\usepackage{calc} % 用于进行尺寸的四则运算
 
 
 % 2. 定义页眉和页脚样式
+\newlength{\hHeight}
+\newlength{\mHeight}
+% 测量当前字体下大写 H 和小写 m 的高度
+\settoheight{\hHeight}{H}
+\settoheight{\mHeight}{m}
+\setlength{\headsep}{1.5\hHeight}
+\setlength{\footskip}{\dimexpr 1.0\mHeight + \baselineskip \relax}
+\setlength{\headheight}{15pt}
 \pagestyle{fancy} % 将默认页面样式设为 fancy
 \fancyhf{} % 清空所有当前的页眉页脚设置
 % 2.1. 页眉设置，PDF 在页眉显示章节标题 
-\fancyhead[L]{\leftmark} % \leftmark 会自动获取 \section{...} 的内容
-\fancyhead[R]{} % 右侧页眉留空
+%\fancyhead[L]{\leftmark} % \leftmark 会自动获取 \section{...} 的内容
+\fancyhead[R]{\textbf{\leftmark}}
+\renewcommand{\sectionmark}[1]{
+    \markboth{\thesection.\ #1}{}
+}
 % 2.2. 页脚设置
-\fancyfoot[L]{\@notetitle} % 页脚左侧，使用已定义的 \@notetitle 变量
-\fancyfoot[R]{\thepage\ / \pageref{LastPage}} % PDF 在页脚右侧显示 "Page X von Y" 
+\fancyfoot[C]{\thepage\ / \pageref{LastPage}} % PDF 在页脚右侧显示 "Page X von Y" 
 % 2.3. 分割线
 \renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-% 2.4. 设置页眉和页脚间距
-% \footruleskip 是控制页脚线和文字间距的宏，默认值是 0.3\normalbaselineskip. 
-\renewcommand{\footruleskip}{0pt}
+% 2.4. 设置页眉间距
 \renewcommand{\headruleskip}{0pt}
 
 
@@ -315,4 +323,3 @@
         \label{#4}
         \end{figure}
 }
-
