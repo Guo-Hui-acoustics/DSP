@@ -25,10 +25,26 @@
     \usepackage[table]{xcolor} 
     \definecolor{lightblue}{rgb}{0.2, 0.4, 0.8} 
     \definecolor{bg}{rgb}{0.16, 0.16, 0.18} 
+    \usepackage{tcolorbox}
+    % 定义一个全局的图片外框样式 "figurebox"
+    % colframe: 边框颜色 (gray!50 表示 50% 灰度，淡雅一些)
+    % colback: 背景颜色 (white)
+    % arc: 圆角半径 (10pt)
+    % boxrule: 边框粗细 (1pt)
+    % boxsep: 内容与边框的额外间距
+    \tcbset{figurebox/.style={
+        colframe=gray!50,
+        colback=white,
+        arc=10pt,
+        boxrule=1pt,
+        boxsep=5pt,
+        width=\linewidth
+    }}
 
     % 1.3 实用工具
     \usepackage{lipsum} 
     \usepackage{calc}   
+    \usepackage{enumitem}
 
 
 % ==================================================
@@ -218,7 +234,7 @@
             \vspace*{\stretch{1}}
             
             % 1. 标题
-            {\Huge\bfseries \@notetitle \footnotemark[1] \par}
+            {\Huge \@notetitle \footnotemark[1] \par}
             
             % [距离 1] 标题基线 -> 上横线 = 0.3cm
             % \nointerlineskip: 忽略行间距，确保 vspace 从文字底部几何边缘开始计算
@@ -314,48 +330,65 @@
 % ==================================================
 % 10. 自定义命令
 % ==================================================
-    % 10.1 单图插入
+    % 10.1 单图插入 (带圆角边框)
     \newcommand{\insertsingleimage}[3]{
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.7\textwidth]{#1}
-            \caption{#2}
-            \label{#3}
+            % 使用定义的 figurebox 样式包裹内容
+            \begin{tcolorbox}[figurebox]
+                \centering
+                % 图片
+                \includegraphics[width=0.7\textwidth]{#1}
+                % 标题 (自动在框内)
+                \caption{#2}
+                \label{#3}
+            \end{tcolorbox}
         \end{figure}
     }
-    % 10.2 双图横排插入
+
+    % 10.2 双图横排插入 (带圆角边框)
     \newcommand{\insertdoubleimage}[8]{
         \begin{figure}[H]
             \centering
-            \begin{subfigure}[b]{0.48\textwidth}
+            \begin{tcolorbox}[figurebox]
                 \centering
-                \includegraphics[width=\textwidth]{#1}
-                \caption{#2}
-                \label{#3}
-            \end{subfigure}
-            \hfill
-            \begin{subfigure}[b]{0.48\textwidth}
-                \centering
-                \includegraphics[width=\textwidth]{#4}
-                \caption{#5}
-                \label{#6}
-            \end{subfigure}
-            \caption{#7}
-            \label{#8}
+                \begin{subfigure}[b]{0.48\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{#1}
+                    \caption{#2}
+                    \label{#3}
+                \end{subfigure}
+                \hfill
+                \begin{subfigure}[b]{0.48\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{#4}
+                    \caption{#5}
+                    \label{#6}
+                \end{subfigure}
+                % 总标题
+                \caption{#7}
+                \label{#8}
+            \end{tcolorbox}
         \end{figure}
     }
-    % 10.3 tikz插入
+
+    % 10.3 tikz插入 (带圆角边框)
     \newcommand{\inserttikzpicture}[3]{
         \begin{figure}[H]
             \centering
-            \begin{tikzpicture}[scale=1.2, font=\small]
-                #1
-            \end{tikzpicture}
-            \caption{#2}
-            \label{#3}
+            \begin{tcolorbox}[figurebox]
+                \centering
+                % TikZ 图形
+                \begin{tikzpicture}[scale=1.2, font=\small]
+                    #1
+                \end{tikzpicture}
+                \caption{#2}
+                \label{#3}
+            \end{tcolorbox}
         \end{figure}
     }
-    % 10.4 表格插入
+
+    % 10.4 表格插入 (保持原样，通常表格不需要圆角框，如需要也可加)
     \newcommand{\inserttable}[4]{
         \begin{table}[H]
             \centering
@@ -368,6 +401,7 @@
             \end{tabular}
         \end{table}
     }
+
     % 10.5 代码块插入
     \usepackage{minted}
     \setminted{frame=single, framesep=2mm, fontsize=\small, breaklines, tabsize=4, python3=true}
@@ -380,4 +414,19 @@
         \end{figure}
     }
 
-    \endinput
+    % 10.6 正文紧凑多级列表
+    % 创建一个新的列表环境 textenum，最大深度 3
+    \newlist{textenum}{enumerate}{3}
+        % 全局设置：nosep (消除所有垂直间距)
+        \setlist[textenum]{nosep}
+        % 第一级配置: 序号缩进 2em (与正文段首对齐)
+        % leftmargin=*: 让 LaTeX 自动计算文字需要往后推多少距离
+        \setlist[textenum,1]{label=(\arabic*), labelindent=2em, leftmargin=*}
+        % 第二级配置: 序号缩进 4em
+        \setlist[textenum,2]{label=(\alph*), labelindent=4em, leftmargin=*}
+        % 第三级配置: 序号缩进 6em
+        \setlist[textenum,3]{label=\roman*., labelindent=6em, leftmargin=*}
+
+
+%% 在此命令前增加新的命令
+\endinput

@@ -1,20 +1,20 @@
-\section{DT Signal and System (Time Domain)}
-    \subsection{Conventions}
-    Considering the continuous signal $x(t)$, we can find it has two elements:
-        \begin{itemize}
-            \item Independent Variable: It can be time or space, here is time $t$.
-            \item Dependent Variable.
-        \end{itemize}
-    Therefore, we can draw a conclusion: Signal is a function.
+\section{离散时间信号与系统（时域）}
+    \subsection{惯例}
+    考虑连续信号 $x(t)$，我们会发现它包含两个要素：
+        \begin{textenum}
+            \item 自变量：可以是时间或空间，这里是时间 $t$。
+            \item 因变量。
+        \end{textenum}
+    因此，我们可以得出一个结论：信号是一个函数。
 
-    However, a mathmatical function often has analytical expression, for example:
+    然而，数学函数通常具有解析表达式，例如：
         \begin{equation}
             x(t) = 3t^2
         \end{equation}
-    But signals often don't have explicit analytical expressions, 
-    so we need to process the signal to get information.
+    但是信号通常没有明确的解析表达式，
+    所以我们需要处理信号以获取信息。
 
-    Now let's introduce continuous-time signal and discrete-time signal:
+    现在让我们介绍连续时间信号和离散时间信号：
         \inserttikzpicture
             {
                 % --- TikZ 绘图代码开始 ---
@@ -59,11 +59,11 @@
             {fig:signals}
     
     \newpage
-    \subsection{Special Signals}
-    Here we introduce some signals.
+    \subsection{特殊信号}
+    这里我们将介绍一些信号。
 
-    \subsubsection{Impulse siganl}
-    Definition:
+    \subsubsection{脉冲信号}
+    定义：
         \begin{equation}
             \delta[n] = 
             \left\{
@@ -73,13 +73,13 @@
             \end{aligned}
             \right.
         \end{equation}
-    The most impotant point about this signal is every signal $x[n]$ can be 
-    decomposed into the linear combination of shifted impulse $\delta[n-k]$:
+    关于这个信号最重要的一点是，
+    任何信号 $x[n]$ 都可以分解为移位脉冲 $\delta[n-k]$ 的线性组合：
         \begin{equation}
             x[n] = \sum_{k=-\infty}^{+\infty} x[k] \underbrace{\delta[n-k]}_{\text{\scriptsize fundamental element}}, k \in \mathbb{Z}
         \end{equation}
     
-    And this formula leads to an important idea:
+    这个公式引出了一个重要的思想：
         \inserttikzpicture
             {
                 % --- TikZ 绘图代码开始 ---
@@ -115,11 +115,11 @@
             }
             {An important Idea}
             {fig:decompose_combine}
-    \noindent This idea tells us:
-    Comples objects can be decomposed into the linear combination of many easy objects.
-    
-    \subsubsection{Unit step}
-    Definition:
+    \noindent 这个思想告诉我们：
+    复杂对象可以被分解为许多简单对象的线性组合。
+
+    \subsubsection{单位阶跃}
+    定义：
         \begin{equation}
             u[n] = 
             \left\{
@@ -129,7 +129,8 @@
             \end{aligned}
             \right.
         \end{equation}
-    So what is the relation of $u[n]$ and $\delta[n]$? We can easily get:
+    那么 $u[n]$ 和 $\delta[n]$ 之间有什么关系？
+    我们可以很容易地得到：
         \begin{equation}
             \begin{aligned}
                 \delta[n] &= u[n] - u[n-1] \\
@@ -137,32 +138,32 @@
             \end{aligned}
         \end{equation}
     
-    \subsubsection{an Important Function}
-        \begin{equation}
+    \subsubsection{一个重要的函数}
+      \begin{equation}
             x_{\omega}(t) = \mathbf{e}^{\mathbf{j}\omega t}
         \end{equation}
-    The subscript of $x$ is $\omega$, means the frequency.
+    $x$ 的下标是 $\omega$，表示频率。
 
-    Why do we introduce it? Because if we perform a linear transform on this function, the frequency doesn't change.
-    
-    And we can give the discrete-time version:
+    为什么我们要引入它？因为如果我们对这个函数进行线性变换，频率不会改变。
+
+    我们可以给出离散时间版本：
         \begin{equation}
             x_{\omega}[n] = \mathbf{e}^{\mathbf{j}\omega n}
         \end{equation}
-    As $n \in \mathbb{Z}$, you can get an interesting property:
+    由于 $n \in \mathbb{Z}$，你可以得到一个有趣的性质：
         \begin{equation}
             \begin{aligned}
             x_{\omega + 2\pi}[n] &= \mathbf{e}^{\mathbf{j}(\omega+2\pi) n}\\
                                  &= \mathbf{e}^{\mathbf{j}\omega n}
             \end{aligned}
         \end{equation}
-    This means, in the frequency domain, this function has periodicity, 
-    and the period is $2\pi$.
+    这意味着，在频域中，这个函数具有周期性，周期为 $2\pi$。
 
-    What frequency does $2\pi$ here correspond to in the physical world? You will get the answer in the following chapter.
+    这里的 $2\pi$ 对应物理世界中的什么频率？你将在下一章得到答案。
 
-    \subsection{Discrete-Time System}
-    We use the following diagram to represent the system and it's function:
+
+    \subsection{离散时间系统}
+    我们使用下图来表示系统及其功能：
         \inserttikzpicture
             {
                 % --- TikZ 绘图代码开始 ---
@@ -203,48 +204,51 @@
             }
             {$y[n] = T(\{x[n]\})$}
             {fig:system_diagram}
-    Why does we use $\{x[n]\}_{n=-\infty}^{+\infty}$ and $\{y[n]\}_{n=-\infty}^{+\infty}$ to represent the input and output?
-    Because the sysetem is divided into:
-        \begin{itemize}
-            \item Memory: $y[n]$ (output at time point $n$) depends on current and past inputs.
-            \item Memoryless: $y[n]$ (output at time point $n$) only depends on current time point input $x[n]$.
-        \end{itemize}
-    So when we express the function of a system using symbols, a more rigorous way of writiing it is :
+
+    为什么我们使用 $\{x[n]\}_{n=-\infty}^{+\infty}$ 
+    和 $\{y[n]\}_{n=-\infty}^{+\infty}$ 来表示输入和输出？
+    因为系统分为：
+        \begin{textenum}
+            \item 有记忆：$y[n]$（时间点 $n$ 的输出）取决于当前和过去的输入。
+            \item 无记忆：$y[n]$（时间点 $n$ 的输出）仅取决于当前时间点的输入 $x[n]$。
+        \end{textenum}
+    所以当我们用符号表示系统的功能时，更严谨的写法是：
         \begin{equation}
             y[n] = T(\{x[n]\})
         \end{equation}
-    This means the system $T$ operates on a sequence of inputs, not only one input at time $n$.
-    But for simplicity, we write it:
+    这意味着系统 $T$ 作用于一系列输入，而不仅仅是时间 $n$ 的一个输入。
+    但为了简单起见，我们将其写作：
         \begin{equation}
              y[n] = T(x[n])
         \end{equation}
     
-    Next, we introduce some typical systems.
+    接下来，我们介绍一些典型的系统。
 
-    \subsubsection{Delay Device}
+
+    \subsubsection{延迟器}
         \begin{equation}
             y[n] = x[n-n_d] 
         \end{equation}
-    $n_d$ is a scalar.
+    $n_d$ 是一个标量。
+    我们应该如何理解系统的功能？我们可以举个例子。
 
-    How should we understand the function of the system? We can give an example.
-
-    Suppose $n_d$ is 2, and we want to get the output at time 3, that is $y[3]$. 
-    According to the formula, we have:
+    假设 $n_d$ 为 2，我们想得到时间 3 的输出，即 $y[3]$。
+    根据公式，我们有：
         \begin{equation}
             \begin{aligned}
                 y[3] &= x[3-n_d]\\
                      &= x[1]
             \end{aligned}
         \end{equation}
-    This means, if we want to get the current ouput, we need to use the past input. 
-    So this system is \textbf{memory}. 
+    这意味着，如果我们想得到当前的输出，我们需要使用过去的输入。
+    所以这个系统是\textbf{有记忆的}。
 
-    \subsubsection{Integrator}
+
+    \subsubsection{积分器}
         \begin{equation}
             y[n] = \sum_{k=-\infty}^{n}x[k]
         \end{equation}
-    This formula leads to an important idea:
+    这个公式引出了一个重要的思想：
         \inserttikzpicture
             {
                 % --- TikZ 绘图代码开始 ---
@@ -289,29 +293,31 @@
             }
             {Continuous and Discrete Time Operations}
             {fig:ct_dt_operations}
-    \noindent Obviously, Integrator is \textbf{memory}.
+    \noindent 显然，积分器是\textbf{有记忆的}。
 
-    \subsubsection{Square Device}
+
+    \subsubsection{平方器}
         \begin{equation}
             y[x] = x^2[n]
         \end{equation}
-    Obviously, Integrator is \textbf{memoryless}.
+    显然，平方器是\textbf{无记忆的}。
 
-    \subsection{Linearity}
-        Linearity is an important property of systems, and also the key to our research.
-        
-        Let's give the definition from the surface.
-        If a system $T$ is a linear system, then:
-            \begin{itemize}
-                \item Additivity: $T(x[n] + y[n]) = T(x[n]) + T(y[n])$.
-                \item Scaling property: $T(\alpha x[n]) = \alpha T(x[n])$.
-            \end{itemize}
-        (we don't know it's "memory" or "memoryless").
 
-        This definition just gives us the surface input-output relation, but the system is still a black box.
-        Now let's analyze the internal structure of the system using \nameref{fig:decompose_combine}.
+    \subsection{线性}
+    线性是系统的一个重要性质，也是我们研究的关键。
 
-        Suppose $T$ is a linear system, look at the following operations:
+    让我们从表面给出定义。
+    如果系统 $T$ 是线性系统，那么：
+            \begin{textenum}
+                \item 可加性：$T(x[n] + y[n]) = T(x[n]) + T(y[n])$.
+                \item 齐次性：$T(\alpha x[n]) = \alpha T(x[n])$.
+            \end{textenum}
+    （我们不知道它是“有记忆”还是“无记忆”）。
+
+    这个定义只是给出了表面的输入输出关系，但系统仍然是一个黑盒子。
+    现在让我们利用 \nameref{fig:decompose_combine} 来分析系统的内部结构。
+
+    假设 $T$ 是线性系统，看下面的操作：
             \inserttikzpicture
                 {
                     % --- TikZ 绘图代码开始 ---
@@ -384,7 +390,7 @@
                 {System Process}
                 {fig:system_process}
 
-        So we realize the following function:
+    所以我们实现了以下功能：
             \inserttikzpicture
                 {
                     % --- TikZ 绘图代码开始 ---
@@ -457,34 +463,36 @@
                 {Summary of Linear System Derivation}
                 {fig:system_derivation_summary}
 
-        That is to say, we decompose the input $x[n]$ into the linear combination of impulses.
-        And as the system $T$ is linear, the output can also be decomposed into the linear combinaton, 
-        and the elements is impulse response:
+    也就是说，我们将输入 $x[n]$ 分解为脉冲的线性组合。
+    由于系统 $T$ 是线性的，输出也可以分解为线性组合，
+    其中的元素是脉冲响应：
                     \begin{equation}
                         h(n,k) = T(\delta[n-k])
                     \end{equation} 
-        
-        \subsection{Understanding Impulse Response}
-        In the above subsection, we get the definition of \textbf{Impulse Response}:
-                    \begin{equation}
-                        h(n,k) = T(\delta[n-k])
-                    \end{equation}
-        We give the following obvious understanding:
-            \begin{itemize}
-                \item $h(n,k)$ is a scalar, when $n$ and $k$ are all determined.
-                \item $h(n,k)$ is a function of variable $n$ and $k$.
-            \end{itemize}
-        Why do we call it impulse response? 
-        
-        Suppose our input is an impulse at time 2:
+   
+      
+    \subsection{理解脉冲响应}
+    在上一小节中，我们得到了\textbf{脉冲响应}的定义：
+        \begin{equation}
+            h(n,k) = T(\delta[n-k])
+        \end{equation}
+ 
+    我们给出以下显而易见的理解：
+            \begin{textenum}
+                \item 当 $n$ 和 $k$ 都确定时，$h(n,k)$ 是一个标量。
+                \item $h(n,k)$ 是变量 $n$ 和 $k$ 的函数。
+            \end{textenum}
+    为什么我们称之为脉冲响应？
+
+    假设我们的输入是在时间 2 的脉冲：
             \begin{equation}
                  x[n] = \delta[n-2]
             \end{equation}
-        You can get:
+    你可以得到：
             \begin{equation}
                 y[n] = T(\delta[n-2]) = h(n,2)
             \end{equation}
-        Here, both $\delta[n-1]$ and $h(n,2)$ are signals, not a scalar:
+    这里，$\delta[n-2]$ 和 $h(n,2)$ 都是信号，而不是标量：
             \inserttikzpicture
                 {
                     % --- TikZ/pgfplots 绘图代码开始 ---
@@ -545,98 +553,99 @@
                 {Impulse Response}
                 {fig:impulse_response_fixed}
         
-        If our input becomes $\delta[n-2] + \delta[n-3]$, what will happen? Our output will become:
-                    \begin{equation}
-                        y[n] = h(n,2) + h(n,3)
-                    \end{equation}
-        And if we pay attention to the output at time point 3 or $y[3]$, it's form is:
-                    \begin{equation}
-                        y[3] = h(3,2) + h(3,3)
-                    \end{equation}
-        So, in a summary:
-                    \begin{itemize}
-                        \item $h(n,2)$ means, give an impulse at time 2, the output containing all the time points that we get.
-                        \item $h(3,2)$ means, give an impulse at time 2, the output at time 3 that we get.
-                    \end{itemize}
-        
+    如果我们的输入变成 $\delta[n-2] + \delta[n-3]$，会发生什么？
+    我们的输出将变成：
+        \begin{equation}
+            y[n] = h(n,2) + h(n,3)
+        \end{equation}
+    如果我们关注时间点 3 的输出或 $y[3]$，它的形式是：
+        \begin{equation}
+            y[3] = h(3,2) + h(3,3)
+        \end{equation}
+    总之：
+        \begin{textenum}
+            \item $h(n,2)$ 意味着，在时间 2 给予一个脉冲，我们得到的包含所有时间点的输出。
+            \item $h(3,2)$ 意味着，在时间 2 给予一个脉冲，我们得到的时间 3 的输出。
+        \end{textenum}
 
-        \subsection{Linearity-Matrix Perspective}
-        Matrix is also a linear transform.
 
-        Suppose we have the following matrix $T$:
-                    \begin{equation}
-                        \begin{bmatrix}
-                            a_{11} & a_{12} & a_{13}\\
-                            a_{21} & a_{22} & a_{23}\\
-                            a_{31} & a_{32} & a_{33}
-                        \end{bmatrix}
-                    \end{equation}
-        We use this matrix to operate on the following column vector:
-             \begin{equation}
-                    \begin{bmatrix}
-                            x_1\\
-                            x_2\\
-                            x_3
-                    \end{bmatrix}
-            \end{equation}
-        The results are:
-            \begin{equation}
-                    % --- 用 \left[ 和 \right] 以及一个 "外部" array 来重建矩阵 ---
-                    \left[
-                    \begin{array}{c@{\,}c@{\,}c} % c@{\,}c@{\,}c 表示三列，列间加一个"小空格"
-                        
-                        % 第 1 列
-                        \boxed{
-                            \begin{array}{@{}c@{}} % "@{}c@{}" 表示一个没有多余边距的内部列
-                                a_{11} \\ a_{21} \\ a_{31}
-                            \end{array}
-                        }
-                        & % 外部 array 的下一列
-                        
-                        % 第 2 列
-                        \boxed{
-                            \begin{array}{@{}c@{}}
-                                a_{12} \\ a_{22} \\ a_{32}
-                            \end{array}
-                        }
-                        & % 外部 array 的下一列
+    \subsection{线性——矩阵视角}
+    矩阵也是一种线性变换。
 
-                        % 第 3 列
-                        \boxed{
-                            \begin{array}{@{}c@{}}
-                                a_{13} \\ a_{23} \\ a_{33}
-                            \end{array}
-                        }
-                    
-                    \end{array} % 结束外部 array
-                    \right]
-                    % --- 你的公式的其余部分 ---
-                    \begin{bmatrix}
+    假设我们有以下矩阵 $T$：
+        \begin{equation}
+            \begin{bmatrix}
+                a_{11} & a_{12} & a_{13}\\
+                a_{21} & a_{22} & a_{23}\\
+                a_{31} & a_{32} & a_{33}
+            \end{bmatrix}
+        \end{equation}
+    我们使用这个矩阵作用于以下列向量：
+        \begin{equation}
+                \begin{bmatrix}
                         x_1\\
                         x_2\\
                         x_3
-                    \end{bmatrix}
-                    =
-                    x_1\begin{bmatrix}
-                        a_{11}\\
-                        a_{21}\\
-                        a_{31}
-                    \end{bmatrix} +
-                    x_2\begin{bmatrix}
-                        a_{12}\\
-                        a_{22}\\
-                        a_{32}
-                    \end{bmatrix}
-                    +
-                    x_3\begin{bmatrix}
-                        a_{13}\\
-                        a_{23}\\
-                        a_{33}
-                    \end{bmatrix}
-                \end{equation}
-    How can we using the idea above to explain this?
+                \end{bmatrix}
+        \end{equation}
+    结果是：
+        \begin{equation}
+                % --- 用 \left[ 和 \right] 以及一个 "外部" array 来重建矩阵 ---
+                \left[
+                \begin{array}{c@{\,}c@{\,}c} % c@{\,}c@{\,}c 表示三列，列间加一个"小空格"
+                    
+                    % 第 1 列
+                    \boxed{
+                        \begin{array}{@{}c@{}} % "@{}c@{}" 表示一个没有多余边距的内部列
+                            a_{11} \\ a_{21} \\ a_{31}
+                        \end{array}
+                    }
+                    & % 外部 array 的下一列
+                    
+                    % 第 2 列
+                    \boxed{
+                        \begin{array}{@{}c@{}}
+                            a_{12} \\ a_{22} \\ a_{32}
+                        \end{array}
+                    }
+                    & % 外部 array 的下一列
 
-    Actually, we perfrom the following operations:
+                    % 第 3 列
+                    \boxed{
+                        \begin{array}{@{}c@{}}
+                            a_{13} \\ a_{23} \\ a_{33}
+                        \end{array}
+                    }
+                
+                \end{array} % 结束外部 array
+                \right]
+                % --- 你的公式的其余部分 ---
+                \begin{bmatrix}
+                    x_1\\
+                    x_2\\
+                    x_3
+                \end{bmatrix}
+                =
+                x_1\begin{bmatrix}
+                    a_{11}\\
+                    a_{21}\\
+                    a_{31}
+                \end{bmatrix} +
+                x_2\begin{bmatrix}
+                    a_{12}\\
+                    a_{22}\\
+                    a_{32}
+                \end{bmatrix}
+                +
+                x_3\begin{bmatrix}
+                    a_{13}\\
+                    a_{23}\\
+                    a_{33}
+                \end{bmatrix}
+            \end{equation}
+    我们如何使用上面的思想来解释这一点？
+
+    实际上，我们要执行以下操作：
                 \begin{equation}
                     \begin{aligned}
                     T \begin{bmatrix}
@@ -685,7 +694,7 @@
                     )             
                     \end{aligned}
                 \end{equation}
-    We have the similar "impulse":
+    我们有类似的“脉冲”：
         \begin{equation}
             \begin{aligned}
                 \begin{bmatrix}
@@ -705,7 +714,7 @@
                     \end{bmatrix}
             \end{aligned}
         \end{equation}
-    And we have the similar "impulse response":
+    并且我们有类似的“脉冲响应”：
         \begin{equation}
             \begin{aligned}
                 T(\begin{bmatrix}
@@ -737,10 +746,11 @@
                     \end{bmatrix}
             \end{aligned}
         \end{equation}
-    From this example: "impulse response" is a nature of the system itself, has nothing to do with the input.
+    从这个例子可以看出：“脉冲响应”是系统本身的性质，与输入无关。
 
-    \subsection{Time-Invariant}
-        Supppose there is an arbitrary system $T$, and we have an input-output combination:
+
+    \subsection{时不变性}
+    假设有一个任意系统 $T$，我们有一个输入输出组合：
             \inserttikzpicture
             {
                 % --- TikZ 绘图代码开始 ---
@@ -782,7 +792,7 @@
             {$y[n] = T(\{x[n]\})$}
             {fig:arbitrary_system}
     
-    If system $T$ is time-invariant, that is to say:
+    如果系统 $T$ 是时不变的，也就是说：
         \inserttikzpicture
             {
                 % --- TikZ 绘图代码开始 ---
@@ -823,88 +833,93 @@
             }
             {Time-Invariant System $T$}
             {fig:TI_system}
-    \noindent Here $n_d$ is a scalar. 
+    \noindent 这里 $n_d$ 是一个标量。
+
+    简而言之，如果一个系统 $T$ 是时不变的，
+    那么输出延迟与输入延迟相同。
+
+
+    \subsection{LTI 系统}
+    如果一个系统同时满足线性和时不变性，那么我们称该系统为\textbf{LTI 系统}。
     
-    So in a word, if one system $T$ is  time-invariant, 
-    then the output delay is the same as the input delay. 
-
-    \subsection{LTI System}
-    If a system simultaneously satisfies linearity and time invariance, then we call the system \textbf{LTI System}.
-
-    In the above subsection, if a system $T$ satisfies linearity, 
-    then we can give \textbf{Impulse Response}:
+    在上一小节中，如果系统 $T$ 满足线性，
+    那么我们可以给出\textbf{脉冲响应}：
         \begin{equation}
             h(n,k) = T(\delta[n-k])
         \end{equation}
-    Here $h(n,k)$ is a function of variable $n$ and $k$, and we just know this function has two variables.
-    
-    Our problem is, if we give the linear system $T$ the time invariance, what form should $h(n,k)$ meet? 
-    
-    Before the resoning begins, why do we focus on $h(n,k)$? Because here we research the nature of the system,
-    and impulse response is the core of this problem.
+    这里 $h(n,k)$ 是变量 $n$ 和 $k$ 的函数，我们只知道这个函数有两个变量。
 
-    Particularly, we give the following definition:
+    我们的问题是，如果我们赋予线性系统 $T$ 时不变性，
+    $h(n,k)$ 应该满足什么形式？
+
+    在推理开始之前，我们为什么关注 $h(n,k)$？
+    因为在这里我们研究系统的性质，
+    而脉冲响应是这个问题的核心。
+
+    特别地，我们给出以下定义：
         \begin{equation}
             h[n] = h(n,0) = T(\delta[n])
         \end{equation}
-    $h[n]$ means the impulse response of $T$ when we give an impulse at time 0.
+    $h[n]$ 表示当我们在时间 0 给予一个脉冲时 $T$ 的脉冲响应。
     
-    This is equivalent to: We give $T$ an input $x[n]=\delta[n]$, the output is $y[n]=h[n]$.
+    这相当于：我们给 $T$ 一个输入 $x[n]=\delta[n]$，输出是 $y[n]=h[n]$。
 
-    Now give our input delay of $k$:
+    现在将我们的输入延迟 $k$：
         \begin{equation}
             x[n]=\delta[n] \quad \xrightarrow{\mathrm{delay}\quad k} \quad \hat{x}[n]=\delta[n-k]
         \end{equation}
-
-    Suppose system $T$ is time-invariant:
+    假设系统 $T$ 是时不变的：
         \begin{equation}
             \hat{y}[n] = y[n-k] = h[n-k]
         \end{equation}
-    As:
+    由于：
         \begin{equation}
             h(n,k) = T(\delta[n-k])
         \end{equation}
-    So:
+    所以：
         \begin{equation}
             h[n-k] = h(n,k)
         \end{equation}
     
-    \subsection{Convolution}
-    Now we know, if a system $T$ satisfies linearity and time-invariance, give it an input $x[n]$, 
-    output is:
+
+    \subsection{卷积}
+    现在我们知道，如果系统 $T$ 满足线性和时不变性，给它一个输入 $x[n]$，
+    输出是：
         \begin{equation}
             y[n] = \sum_{k=-\infty}^{+\infty} x[k]h[n-k]
         \end{equation}
     
-    We can give the definition of two signals' $\ast$ oepration:
+    我们可以给出两个信号 $\ast$ 运算的定义：
         \begin{equation}
             x[n] \ast h[n] = \sum_{k=-\infty}^{+\infty} x[k]h[n-k]
         \end{equation}
-    And we can say: If a system is LTI system, then:
+    我们可以说：如果一个系统是 LTI 系统，那么：
         \begin{equation}
-            \mathrm{output} = \mathrm{input} \ast  \mathrm{impulse \quad response}
+            \mathrm{output} = \mathrm{input} \ast  
+            \mathrm{impulse \quad response}
         \end{equation}
     
-    \subsection{An Example of Convolution}
-    Suppose $T$ is a LTI system, and the impulse response is:
+
+    \subsection{卷积的一个例子}
+    假设 $T$ 是一个 LTI 系统，其脉冲响应为：
         \begin{equation}
             h[n] = u[n] - u[n-N]
         \end{equation}
-    here $u[n]$ is unit step, $N$ is a positive integer.
-    We give it an input:
+    这里 $u[n]$ 是单位阶跃，$N$ 是正整数。
+    我们给它一个输入：
         \begin{equation}
             x[n] = a^nu[n]
         \end{equation}
-    here $|a|<1$.
+    这里 $|a|<1$。
 
-    Calsulate the output:
+    计算输出：
         \begin{equation}
             y[n] = x[n] \ast h[n] = \sum_{k=-\infty}^{+\infty} x[k]h[n-k]
         \end{equation}
     
-    \subsubsection{Method1. Analytical Calculations.}
 
-    Expand the convolution formula:
+    \subsubsection{方法1. 解析计算}
+    展开卷积公式：
         \begin{equation}
             \begin{aligned}
             y[n] &= \sum_{k=-\infty}^{+\infty} x[k]h[n-k]\\
@@ -912,46 +927,54 @@
             \end{aligned}
         \end{equation}
     
-    As the unit step $u[n]$ gives 0 when $n<0$, and $k$ is summation variable, we need to detemine which part of $k$ gives a non-zero result.
+    由于单位阶跃 $u[n]$ 在 $n<0$ 时为 0，
+    且 $k$ 是求和变量，我们需要确定 $k$ 的哪一部分会给出非零结果。
 
-    For the part $\sum_{k=-\infty}^{+\infty} a^ku[k]u[n-k]$, if it's non-zero, then:
+    对于部分 $\sum_{k=-\infty}^{+\infty} a^ku[k]u[n-k]$，
+    如果它是非零的，那么：
         \begin{equation} \label{k_range_1}
             k \in [0,n]
         \end{equation}
 
-    For the part $\sum_{k=-\infty}^{+\infty} a^ku[k]u[n-N-k]$, if it's non-zero, then:
+    对于部分 $\sum_{k=-\infty}^{+\infty} a^ku[k]u[n-N-k]$，
+    如果它是非零的，那么：
         \begin{equation}\label{k_range_2}
             k \in [0,n-N]
         \end{equation}
     
-    Then because our main variable is $n$, we need to have a segmented discussion about different range of $n$, 
-    and use the \eqref{k_range_1} and \eqref{k_range_2} to find whether the part is 0 or not.
+    然后因为我们的主要变量是 $n$，我们需要对 $n$ 的不同范围进行分段讨论，
+    并利用 \eqref{k_range_1} 和 \eqref{k_range_2} 来找出该部分是否为 0。
 
-    For $n \in (-\infty,0)$, the range of $k$ cann't meet \eqref{k_range_1} or \eqref{k_range_2}, so both part are 0:
+    对于 $n \in (-\infty,0)$，
+    $k$ 的范围不能满足 \eqref{k_range_1} 或 \eqref{k_range_2}，
+    所以两部分都是 0：
         \begin{equation}
             y[n] = 0
         \end{equation}
     
-    For $n \in [0,N-1]$, the range of $k$ can meet \eqref{k_range_1}, but cann't meet \eqref{k_range_2}:
+    对于 $n \in [0,N-1]$，$k$ 的范围可以满足 \eqref{k_range_1}，
+    但不能满足 \eqref{k_range_2}：
         \begin{equation}
-            \begin{aligned}
+            \begin{aligned} 
             y[n] &= \sum_{k=-\infty}^{+\infty} a^ku[k]u[n-k]\\
                  &= \sum_{k=0}^{n}a^k
             \end{aligned}
         \end{equation}
     
-    For $n \in [N,\infty]$, the range of $k$ can meet \eqref{k_range_1}, and can meet \eqref{k_range_2}:
+    对于 $n \in [N,\infty]$，
+    $k$ 的范围可以满足 \eqref{k_range_1}，
+    并且可以满足 \eqref{k_range_2}：
         \begin{equation}
             \begin{aligned}
-            y[n] &= \sum_{k=-\infty}^{+\infty} a^ku[k]u[n-k] -\sum_{k=-\infty}^{+\infty} a^ku[k]u[n-N-k] \\
+            y[n] &= \sum_{k=-\infty}^{+\infty} a^ku[k]u[n-k]  -\sum_{k=-\infty}^{+\infty} a^ku[k]u[n-N-k] \\
                  &= \sum_{k=0}^{n}a^k - \sum_{k=0}^{n-N}a^k
             \end{aligned}
         \end{equation}
     
+
     \newpage
-    \subsubsection{Graphical Solution}
-    
-    The graph of $h[n]$ and $x[n]$ are as follows, here we choose $a = 1/2$:
+    \subsubsection{图解法}
+    $h[n]$ 和 $x[n]$ 的图形如下所示，这里我们选择 $a = 1/2$：
         \inserttikzpicture
             {
                 % --- TikZ/pgfplots 绘图代码开始 ---
@@ -1017,11 +1040,13 @@
             {$h[n]$ and $x[n]$}
             {fig:x_n_h_n}    
 
-    As the summation variable is $k$, we perform the following operations:
+    由于求和变量是 $k$，我们执行以下操作：
                 \begin{equation}
                     h[n-k] = h[-(k-n)]
                 \end{equation}
-    How can we get $h[-(k-n)]$? We can use $h[-k]$ and shift $n$ units:
+    我们如何得到 $h[-(k-n)]$？
+
+    我们可以使用 $h[-k]$ 并平移 $n$ 个单位：
         \inserttikzpicture
             {
                 % --- TikZ/pgfplots 绘图代码开始 ---
@@ -1088,9 +1113,9 @@
             {Top: The signal $h[n]$ and time-reversed signal $h[-n]$.}
             {fig:signals_reversed}
         
-        Then shift $h[-k]$ by $n$ units, and perform corresponding multiplication:
-                \inserttikzpicture
-                    {
+    然后将 $h[-k]$ 平移 $n$ 个单位，并执行相应的乘法：
+                    \inserttikzpicture
+                        {
                         % --- TikZ/pgfplots 绘图代码开始 ---
                         \begin{groupplot}[
                             % --- 1. groupplot 样式 ---
@@ -1154,27 +1179,3 @@
                     }
                     { $y[n] = \sum x[k]h[n-k]$ at $n=2$. }
                     {fig:convolution_step}
-    
-                
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-

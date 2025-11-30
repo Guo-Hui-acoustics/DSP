@@ -2,23 +2,23 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}数字 vs 模拟}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}DSP的历史}{1}{subsection.1.2}%
-\contentsline {section}{\numberline {2}DT Signal and System (Time Domain)}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Conventions}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Special Signals}{4}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Impulse siganl}{4}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Unit step}{4}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}an Important Function}{5}{subsubsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.3}Discrete-Time System}{5}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Delay Device}{6}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Integrator}{6}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Square Device}{7}{subsubsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.4}Linearity}{7}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Understanding Impulse Response}{9}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Linearity-Matrix Perspective}{11}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Time-Invariant}{12}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}LTI System}{12}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Convolution}{13}{subsection.2.9}%
-\contentsline {subsection}{\numberline {2.10}An Example of Convolution}{14}{subsection.2.10}%
-\contentsline {subsubsection}{\numberline {2.10.1}Method1. Analytical Calculations.}{14}{subsubsection.2.10.1}%
-\contentsline {subsubsection}{\numberline {2.10.2}Graphical Solution}{16}{subsubsection.2.10.2}%
+\contentsline {section}{\numberline {2}离散时间信号与系统（时域）}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}惯例}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}特殊信号}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}脉冲信号}{4}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}单位阶跃}{4}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}一个重要的函数}{5}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}离散时间系统}{5}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}延迟器}{6}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}积分器}{6}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}平方器}{7}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}线性}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}理解脉冲响应}{9}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}线性——矩阵视角}{11}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}时不变性}{12}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}LTI 系统}{12}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}卷积}{13}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}卷积的一个例子}{14}{subsection.2.10}%
+\contentsline {subsubsection}{\numberline {2.10.1}方法1. 解析计算}{14}{subsubsection.2.10.1}%
+\contentsline {subsubsection}{\numberline {2.10.2}图解法}{16}{subsubsection.2.10.2}%
 \contentsline {section}{\numberline {3}DT Signal and System (Frequency Domain)}{19}{section.3}%
