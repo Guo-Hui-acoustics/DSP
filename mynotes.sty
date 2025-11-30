@@ -1,247 +1,320 @@
 % mynotes.sty - 我的个人笔记样式文件 
+% 维护者: Guo-Hui-acoustics
+% 更新时间: 2025/11/30
 
+% ==================================================
 % 0. 文件标识
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{mynotes}[2025/10/06 My Personal Notes Style]
-
-% 1. 引入依赖的宏包 
-% 1.1. 字体
-\usepackage{newtxtext} 
-\usepackage{inconsolata}
-\usepackage[T1]{fontenc}
-% 1.2. 布局
-\usepackage[a4paper, top=2.54cm, bottom=2.54cm, left=1.91cm, right=1.91cm]{geometry}
-\usepackage{lipsum}   
-\usepackage{abstract} 
-\usepackage{graphicx} 
-\usepackage{float}    
-\usepackage{subcaption} 
-\RequirePackage{setspace}
-\setstretch{1.5}
-% 1.3. 数学
-\usepackage{amsmath}   
-\usepackage{amssymb}
-\usepackage{arydshln} 
-\usepackage{empheq}
-% 1.4. 绘图与颜色
-\usepackage{tikz} 
-\usetikzlibrary{tikzmark}     
-\usetikzlibrary{fit}          
-\usetikzlibrary{positioning}  
-\usepackage{color}
-\usetikzlibrary{arrows.meta}
-\usetikzlibrary{positioning} 
-\usetikzlibrary{shapes.geometric, calc, tikzmark} 
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18} 
-\usepgfplotslibrary{groupplots}
-\usepackage{xcolor}  
-% 1.5. 交叉引用
-\definecolor{lightblue}{rgb}{0.2, 0.4, 0.8} 
-\usepackage{hyperref} 
-\hypersetup{
-    colorlinks=true, linkcolor=blue, citecolor=green, 
-    urlcolor=cyan, linkbordercolor={1 1 1},
-}
-\renewcommand{\eqref}[1]{\hyperref[#1]{\textup{\tagform@{\ref*{#1}}}}}
-\usepackage{nameref} 
-% 1.6. 页眉和页脚
-\usepackage{fancyhdr} 
-\usepackage{lastpage}
-\usepackage{calc} % 用于进行尺寸的四则运算
+% ==================================================
+    \NeedsTeXFormat{LaTeX2e}
+    \ProvidesPackage{mynotes}[2025/11/30 My Personal Notes Style Refactored]
 
 
-% 2. 定义页眉和页脚样式
-\newlength{\hHeight}
-\newlength{\mHeight}
-% 测量当前字体下大写 H 和小写 m 的高度
-\settoheight{\hHeight}{H}
-\settoheight{\mHeight}{m}
-\setlength{\headsep}{1.5\hHeight}
-\setlength{\footskip}{\dimexpr 1.0\mHeight + \baselineskip \relax}
-\setlength{\headheight}{15pt}
-\pagestyle{fancy} % 将默认页面样式设为 fancy
-\fancyhf{} % 清空所有当前的页眉页脚设置
-% 2.1. 页眉设置，PDF 在页眉显示章节标题 
-%\fancyhead[L]{\leftmark} % \leftmark 会自动获取 \section{...} 的内容
-\fancyhead[R]{\textbf{\leftmark}}
-\renewcommand{\sectionmark}[1]{
-    \markboth{\thesection.\ #1}{}
-}
-% 2.2. 页脚设置
-\fancyfoot[C]{\thepage\ / \pageref{LastPage}} % PDF 在页脚右侧显示 "Page X von Y" 
-% 2.3. 分割线
-\renewcommand{\headrulewidth}{0.4pt}
-% 2.4. 设置页眉间距
-\renewcommand{\headruleskip}{0pt}
+% ==================================================
+% 1. 常用宏包
+% ==================================================
+    % 1.1 数学支持
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{empheq}
+    \usepackage{arydshln} 
+
+    % 1.2 图形与颜色支持
+    \usepackage{graphicx}
+    \usepackage{float}
+    \usepackage{subcaption}
+    \usepackage[table]{xcolor} 
+    \definecolor{lightblue}{rgb}{0.2, 0.4, 0.8} 
+    \definecolor{bg}{rgb}{0.16, 0.16, 0.18} 
+
+    % 1.3 实用工具
+    \usepackage{lipsum} 
+    \usepackage{calc}   
 
 
-% 3. 为封面页定义新的存储命令
-\newcommand{\notetitle}[1]{\def\@notetitle{#1}}
-\newcommand{\noteauthor}[1]{\def\@noteauthor{#1}}
-\newcommand{\notedate}[1]{\def\@notedate{#1}}
-\newcommand{\noteabstract}[1]{\def\@noteabstract{#1}}
-% 3.1. 为新封面布局声明变量
-\newsavebox{\ContentAboveRuleBox}
-\newdimen{\TotalBoxHeight}
-\newdimen{\SpaceBefore}
-% 3.2. 生成封面页
-%    创建命令来生成 *新的* 封面页
-%    这个命令现在包含了 'lrbox' 测量和 'titlepage' 布局
-\newcommand{\makenotetitle}{
-    % 测量和计算
-    % (这必须在 \begin{document} 之后执行，所以我们把它放在这里)
-    \begin{lrbox}{\ContentAboveRuleBox}
-        \begin{minipage}{\linewidth} % 使用 minipage 确保宽度正确
-            % 1. 标题与作者 (使用 \@notetitle 和 \@noteauthor 变量)
-            {\Huge \centering  \@notetitle \par}
-            {\large \hfill \@noteauthor \par}
+% ==================================================
+% 2. 页面布局
+% ==================================================
+    \usepackage[a4paper, top=2.54cm, bottom=2.54cm, left=1.91cm, right=1.91cm]{geometry}
+    \usepackage{setspace}
+    \setstretch{1.5} % 全局 1.5 倍行距 (包括目录)
+    \usepackage{indentfirst} % 首行缩进
+    \setlength{\parindent}{2em}
 
-            % 2. 顶部横线
-            \noindent\rule{\linewidth}{2pt}\par
+
+% ==================================================
+% 3. 字体配置
+% ==================================================
+    % 3.1 西文字体
+    \usepackage[T1]{fontenc}
+    \usepackage{newtxtext} 
+    % 3.2 中文支持
+    % scheme=plain: 不更改默认的字号和版式，只提供中文支持
+    % fontset=fandol: 使用 Fandol 开源字体
+    \usepackage[scheme=plain, fontset=fandol]{ctex}
+    
+
+
+% ==================================================
+% 4. 多级标题配置
+% ==================================================
+\usepackage{titlesec}
+
+    % 4.0 箴言 (Epigraph) 功能支持
+
+    % 使用 \gdef 初始化，确保它和 \empty 类型一致(短宏)
+    % 这样 \ifx 判断才会准确，消除目录页的"幽灵标点"
+    \gdef\@notechapterquote{}
+    \gdef\@notechapterauthor{}
+
+    % 用户接口：设置当前章节的箴言
+    \newcommand{\setchapterquote}[2]{%
+        \gdef\@notechapterquote{#1}%
+        \gdef\@notechapterauthor{#2}%
+    }
+
+    % 内部辅助命令：打印并清空箴言
+    \newcommand{\@printchapterquote}{%
+        \ifx\@notechapterquote\empty
+            % 为空则不操作
+        \else
+            % 有内容则排版
+            \par\nointerlineskip
+            \vspace{0.5em} 
+            \hfill 
+            \begin{minipage}{0.7\linewidth} 
+                \raggedleft 
+                \small
+                % 打印箴言
+                \textbf{\texttt{``\@notechapterquote''}}
+                % 换行并打印作者
+                \par\vspace{0.5ex}
+                \textbf{\texttt{--- \@notechapterauthor}}
+            \end{minipage}
+            \par
+            % 打印后立即清空
+            \gdef\@notechapterquote{}%
+            \gdef\@notechapterauthor{}%
+        \fi
+    }
+
+    % 4.1 有编号一级标题 (Numbered Section) -> Chapter 样式 + 箴言钩子
+    % 只有带编号的标题(如 Chapter 1)才会触发箴言逻辑
+    \titleformat{\section}
+        {\Large\bfseries}       
+        {Chapter\ \thesection}  
+        {1em}                   
+        {}                      
+        [\@printchapterquote]   
+
+    \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+
+    % 4.2 无编号一级标题 (Numberless Section) -> 保护目录页
+    % 【关键修改 2】显式定义无编号标题(如目录、前言)的格式
+    % 这种格式下不挂载 [\@printchapterquote]，彻底杜绝干扰
+    \titleformat{name=\section, numberless}
+        {\Large\bfseries}
+        {}
+        {0pt}
+        {}
+    
+    \titlespacing*{name=\section, numberless}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+
+    % 4.3 二级标题 (Subsection)
+    \titleformat{\subsection}
+        {\large\bfseries}
+        {\thesubsection}
+        {1em}
+        {}
+    \titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+    % 4.4 三级标题 (Subsubsection)
+    \titleformat{\subsubsection}
+        {\normalsize\bfseries}
+        {\thesubsubsection}
+        {1em}
+        {}
+    \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+% ==================================================
+% 5. 交叉引用配置
+% ==================================================
+    \usepackage{nameref}
+    \usepackage{hyperref} 
+    \hypersetup{
+        colorlinks=true, 
+        linkcolor=blue, 
+        citecolor=green, 
+        urlcolor=cyan, 
+        linkbordercolor={1 1 1},
+    }
+    \renewcommand{\eqref}[1]{\hyperref[#1]{\textup{\tagform@{\ref*{#1}}}}}
+
+
+% ==================================================
+% 6. 页眉和页脚配置
+% ==================================================
+    \usepackage{fancyhdr}
+    \usepackage{lastpage}
+
+
+% ==================================================
+% 7. 绘图相关
+% ==================================================
+    \usepackage{tikz}
+    \usepackage{pgfplots}
+    \pgfplotsset{compat=1.18}
+    \usepgfplotslibrary{groupplots}
+    \usetikzlibrary{tikzmark, fit, positioning, arrows.meta, shapes.geometric, calc}
+
+
+% ==================================================
+% 8. 封面页定制
+% ==================================================
+    % 8.1 信息配置命令
+    \newcommand{\notetitle}[1]{\def\@notetitle{#1}}
+    \newcommand{\noteauthor}[1]{\def\@noteauthor{#1}}
+    \newcommand{\notedate}[1]{\def\@notedate{#1}}
+    \newcommand{\noteversion}[1]{\def\@noteversion{#1}}
+    \newcommand{\noterepo}[1]{\def\@noterepo{#1}}
+    \newcommand{\noteemail}[1]{\def\@noteemail{#1}}
+
+    % 默认元数据
+    \def\@notetitle{Untitled Notes}
+    \def\@noteauthor{Unknown Author}
+    \def\@notedate{\today}
+    \def\@noteversion{v1.0}
+    \def\@noterepo{https://github.com}
+    \def\@noteemail{example@email.com}
+
+    % 8.2 封面图像配置
+    % 定义设置接口
+    \newcommand{\setcoverimage}[1]{\def\@coverimage{#1}}
+
+    % 设置默认逻辑：尝试加载 dsp_cover_image.tex
+    \IfFileExists{dsp_cover_image.tex}{
+        % 存在则加载 (TikZ 代码自包含 savebox 定义)
+        \def\@coverimage{\input{dsp_cover_image.tex}}
+    }{
+        % 不存在则显示占位符
+        \def\@coverimage{%
+            \fbox{\parbox{10cm}{\centering 
+            \vspace{1cm} 
+            \textbf{File missing: dsp\_cover\_image.tex} \\
+            Please create it or use \texttt{\textbackslash setcoverimage}.
+            \vspace{1cm}
+            }}%
+        }
+    }
+
+    % 8.3 封面生成主命令
+    \newcommand{\makenotetitle}{
+        \begin{titlepage}
+            \centering
+            % 顶部弹性空间
+            \vspace*{\stretch{1}}
             
-            % 4. 中心"图像" (临时占位符)
-            \vspace{0.2cm} % 顶部横线下的间距
-            \begin{center}
-                % --- PGFPlots 样式定义 (必须放在这里) ---
-                \pgfplotsset{
-                    compat=1.18, % 确保已加载 pgfplots
-                    % 样式 1: 用于输入/输出信号图
-                    signalplot/.style={
-                        width=5.5cm, height=3.5cm, % 图像尺寸
-                        hide axis, samples=101, domain=0:12.566,
-                        enlargelimits=false, ymin=-3.2, ymax=3.2,
-                    },
-                    % 样式 2: 用于滤波器频率响应图
-                    filterplot/.style={
-                        width=4.5cm, height=3.5cm, % 滤波器图像尺寸 (等高)
-                        samples=51, domain=-5:5, ymin=0, ymax=1.2,
-                        axis lines=middle, enlargelimits=false,
-                        xticklabels={}, yticklabels={},
-                        xlabel=$\omega$, ylabel=$|H(j\omega)|$,
-                        every axis x label/.style={at=(current axis.right of origin), anchor=west, font=\small},
-                        every axis y label/.style={at=(current axis.above origin), anchor=south, font=\small}
-                    }
-                }
-                % --- 使用 savebox 预先绘制所有三个图像 (必须放在这里) ---
+            % 1. 标题
+            {\Huge\bfseries \@notetitle \footnotemark[1] \par}
+            
+            % [距离 1] 标题基线 -> 上横线 = 0.3cm
+            % \nointerlineskip: 忽略行间距，确保 vspace 从文字底部几何边缘开始计算
+            \par\nointerlineskip 
+            \vspace{0.5cm}
+            
+            % 2. 上横线
+            \noindent\rule{\linewidth}{2pt}
+            
+            % [距离 2] 上横线 -> 图形顶部 = 0.3cm
+            \par\nointerlineskip
+            \vspace{0.5cm}
+            
+            % 3. 封面图像区域
+            % 使用大括号 {} 限制范围，\centering 居中
+            % 这种方式不产生 center 环境的额外垂直间距
+            {
+                \centering
+                \@coverimage 
+                \par
+            }
+            
+            % [距离 3] 图形底部 -> 下横线 = 0.3cm
+            \par\nointerlineskip
+            \vspace{0.5cm}
+            
+            % 4. 下横线
+            \noindent\rule{\linewidth}{2pt}
+            
+            % [距离 4] 下横线 -> 作者信息顶部 = 0.3cm
+            \par\nointerlineskip
+            \vspace{0.1cm}
+            
+            % 5. 作者与版本信息 (右对齐)
+            \begin{flushright}
+                {\large \textbf{\@noteauthor} \footnotemark[2] \par}
+                {\small \texttt{\@noteversion} \par}
+            \end{flushright}
+            
+            % 底部弹性空间
+            \vspace*{\stretch{2}}
+            
+            % 6. 脚注
+            \footnotetext[1]{Project repository: \url{\@noterepo}}
+            \footnotetext[2]{Author email: \href{mailto:\@noteemail}{\@noteemail}}
+            
+        \end{titlepage}
+        \setcounter{footnote}{0}
+    }
 
-                % 盒子 1: 混合信号
-                \newsavebox{\mixedsignalplot}
-                \savebox{\mixedsignalplot}{%
-                    \begin{tikzpicture}
-                    \begin{axis}[signalplot]
-                        \addplot [blue, thick] {sin(deg(x)) + sin(deg(2*x)) + sin(deg(4*x))};
-                        \draw [black, dashed, opacity=0.5] (axis cs:0,0) -- (axis cs:12.566,0);
-                    \end{axis}
-                    \end{tikzpicture}%
-                }
 
-                % 盒子 2: 纯 sinx 信号
-                \newsavebox{\sinesignalplot}
-                \savebox{\sinesignalplot}{%
-                    \begin{tikzpicture}
-                    \begin{axis}[signalplot]
-                        \addplot [blue, thick] {sin(deg(x))};
-                        \draw [black, dashed, opacity=0.5] (axis cs:0,0) -- (axis cs:12.566,0);
-                    \end{axis}
-                    \end{tikzpicture}%
-                }
+% ==================================================
+% 9. 前言定制 (Preface)
+% ==================================================
+    % 9.1 定义变量
+    \newcommand{\notepreface}[1]{\def\@notepreface{#1}}
 
-                % 盒子 3: 低通滤波器 (L-P Filter)
-                \newsavebox{\lpfplot}
-                \savebox{\lpfplot}{%
-                    \begin{tikzpicture}
-                    \begin{axis}[filterplot]
-                        \addplot [red, thick, smooth] {exp(-0.2*x^2)};
-                    \end{axis}
-                    \end{tikzpicture}%
-                }
-
-                % --- TikZ 图像开始 (绘制最终框图) ---
-                \begin{tikzpicture}[
-                    % 样式：用于放置绘图的节点 (带边框)
-                    plot_node/.style={
-                        draw, 
-                        rectangle, 
-                        inner sep=0pt % 边框紧贴图像
-                    },
-                    % 样式：设置默认箭头
-                    >=Stealth
-                  ]
-                  
-                  % 1. 放置左侧的 'Input' 图像
-                  \node (in2) [plot_node] {\usebox{\mixedsignalplot}};
-                  
-                  % 2. 放置中心的 'Filter' 图像
-                  \node (sys2) [plot_node, right=0.5cm of in2] {\usebox{\lpfplot}};
-                  
-                  % 3. 放置右侧的 'Output' 图像
-                  \node (out2) [plot_node, right=0.5cm of sys2] {\usebox{\sinesignalplot}};
-                  
-                  % 4. 绘制箭头
-                  \draw [->] (in2) -- (sys2);
-                  \draw [->] (sys2) -- (out2);
-                  
-                  \node [
-                      draw, black,                   % 绘制黑色边框
-                      rounded corners=3pt,           % 轻微的圆角
-                      % 适配所有三个图像节点
-                      fit=(in2) (sys2) (out2), 
-                      inner sep=10pt                 % 边框与内容的间距 (可调整)
-                  ] {};
-
-                \end{tikzpicture}
-            \end{center}
-            \vspace{0.2cm} % 底部横线上的间距
-        \end{minipage}
-    \end{lrbox}
-    % 计算总高度
-    \TotalBoxHeight=\dimexpr\ht\ContentAboveRuleBox + \dp\ContentAboveRuleBox\relax
-    % 计算顶部空白 (使用 geometry 设置的 1in 边距)
-    \SpaceBefore=\dimexpr 0.5\paperheight - 1in - \TotalBoxHeight \relax
-    % 标题页渲染
-    \begin{titlepage}
-        \pagestyle{empty} % 标题页不显示页码
-        % 插入我们计算好的顶部空白
-        \vspace*{\SpaceBefore}
+    % 9.2 生成前言页主命令
+    \newcommand{\makepreface}{
+        \clearpage
+        % 1. 切换页码为大写罗马数字 (I, II, III...)
+        % 如果想要小写 (i, ii...), 请改为 \pagenumbering{roman}
+        \pagenumbering{Roman}
         
-        % 渲染 "保存盒" 里的所有内容
-        \noindent\usebox{\ContentAboveRuleBox}\par
+        % 2. 强制设定页码为 2 (II)
+        % 逻辑：封面由于 titlepage 环境通常被视为第 1 页(尽管不显示)
+        \setcounter{page}{2}
         
-        % 渲染底部的横线 (精确位于页面 1/2 处)
-        \noindent\rule{\linewidth}{2pt}\par
+        % 3. 页面样式设置
+        % 使用 fancy 样式以显示页眉页脚，或者用 plain (页码在底部)
+        %\thispagestyle{fancy}
         
-        % 页脚信息
-        \vfill 
-        \small % 页脚使用小号字体
-        % 版权行 (使用 \@noteauthor 和 \@notedate 变量)
-        Copyright \copyright\ \@notedate\ \@noteauthor  \ (\href{gh20222734@163.com}{gh20222734@163.com})
-        \par 
-        % 许可证行 (占位符)
-        This work is licensed under a Creative Commons Attribution 4.0 International License.
-        \par 
-        % 链接行 (占位符)
-        Project repository: \url{https://github.com/Guo-Hui-acoustics/DSP}
-        %\par
-        %Document source: \url{https://example.com/notes/download}
-    \end{titlepage}
-}
+        % 4. 添加到目录 (关键步骤)
+        % \phantomsection 配合 hyperref 确保点击目录能准确跳转到当前页顶部
+        \phantomsection 
+        \addcontentsline{toc}{section}{Preface}
+        
+        % 5. 绘制标题
+        \noindent{\Large\bfseries Preface\par}
+        
+        % 标题与内容的间距 (与正文标题间距保持视觉一致)
+        \vspace{1em} 
+        
+        % 6. 渲染内容
+        \@notepreface
+        
+        \clearpage
+        % 注意：此时页码依然是罗马数字。
+        % 通常在 main.tex 中，目录结束后才手动切换回阿拉伯数字 (arabic)。
+    }
 
 
-% 4. 创建一个命令来生成 *单独的* 摘要页
-\newcommand{\makeabstractpage}{
-    \newpage % 开始新的一页
-    \thispagestyle{empty} % 本页不显示页码
-    % 1. 手动创建左对齐、加粗的 "Abstract" 标题
-    \noindent{\Large\bfseries Abstract\par} 
-    % 2. 打印摘要内容。
-    \@noteabstract
-    \clearpage % 结束本页
-}
-
-
-% 5. 自定义图片插入命令
-    % 5.1. 单图插入命令 \insertsingleimage
+% ==================================================
+% 10. 自定义命令
+% ==================================================
+    % 10.1 单图插入
     \newcommand{\insertsingleimage}[3]{
         \begin{figure}[H]
             \centering
@@ -250,76 +323,61 @@
             \label{#3}
         \end{figure}
     }
-    % 5.2. 双图插入命令 \insertdoubleimage
+    % 10.2 双图横排插入
     \newcommand{\insertdoubleimage}[8]{
-            \begin{figure}[H]
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}[b]{0.48\textwidth}
                 \centering
-                % 第一个子图
-                \begin{subfigure}[b]{0.48\textwidth}
-                    \centering
-                    \includegraphics[width=\textwidth]{#1}
-                    \caption{#2}
-                    \label{#3}
-                \end{subfigure}
-                \hfill % 水平间距
-                % 第二个子图
-                \begin{subfigure}[b]{0.48\textwidth}
-                    \centering
-                    \includegraphics[width=\textwidth]{#4}
-                    \caption{#5}
-                    \label{#6}
-                \end{subfigure}
-                \caption{#7}
-                \label{#8}
-            \end{figure}
-        }
-
-
-% 6. 自定义一个插入 TikZ 图像的命令
-\newcommand{\inserttikzpicture}[3]{
-    \begin{figure}[H]
-        \centering
-        \begin{tikzpicture}[
-            scale=1.2,
-            font=\small
-        ]
-            % 参数 #1: 用户输入的 TikZ 绘图代码会在这里展开
-            #1
-        \end{tikzpicture}
-        \caption{#2} % 参数 #2: 图片标题
-        \label{#3}   % 参数 #3: 图片标签
-    \end{figure}
-}
-
-
-% 7. 自定义表格插入命令
-\newcommand{\inserttable}[4]{
-    \begin{table}[H] % 使用 [H] 选项让表格出现在代码所在的位置
-        \centering   % 表格整体居中
-        \caption{#3} % 设置表格标题
-        \label{#4}   % 设置表格标签
-        \begin{tabular}{#1} % #1 是用户传入的列格式
-            \hline \hline % 表格顶部的双横线，更具学术风格
-            % #2 是用户传入的表格内容
-            #2 \\
-            \hline \hline % 表格底部的双横线
-        \end{tabular}
-    \end{table}
-}
-
-    
-% 8. 自定义代码块插入命令，依赖 minted 宏包
-\usepackage{minted}
-\setminted{
-    frame=single, framesep=2mm, fontsize=\small, 
-    breaklines, tabsize=4, python3=true         
-}
-\definecolor{bg}{rgb}{0.16, 0.16, 0.18} 
-\newcommand{\insertcodefromfile}[4]{
-    \begin{figure}[H]
-        \centering
-        \inputminted{#1}{#2}
-        \caption{#3}
-        \label{#4}
+                \includegraphics[width=\textwidth]{#1}
+                \caption{#2}
+                \label{#3}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}[b]{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{#4}
+                \caption{#5}
+                \label{#6}
+            \end{subfigure}
+            \caption{#7}
+            \label{#8}
         \end{figure}
-}
+    }
+    % 10.3 tikz插入
+    \newcommand{\inserttikzpicture}[3]{
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}[scale=1.2, font=\small]
+                #1
+            \end{tikzpicture}
+            \caption{#2}
+            \label{#3}
+        \end{figure}
+    }
+    % 10.4 表格插入
+    \newcommand{\inserttable}[4]{
+        \begin{table}[H]
+            \centering
+            \caption{#3}
+            \label{#4}
+            \begin{tabular}{#1}
+                \hline \hline
+                #2 \\
+                \hline \hline
+            \end{tabular}
+        \end{table}
+    }
+    % 10.5 代码块插入
+    \usepackage{minted}
+    \setminted{frame=single, framesep=2mm, fontsize=\small, breaklines, tabsize=4, python3=true}
+    \newcommand{\insertcodefromfile}[4]{
+        \begin{figure}[H]
+            \centering
+            \inputminted{#1}{#2}
+            \caption{#3}
+            \label{#4}
+        \end{figure}
+    }
+
+    \endinput
